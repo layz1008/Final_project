@@ -12,9 +12,9 @@ Members:
 
 ### TO START Part I
 
-1.) `git clone <repo>` DO NOT FORK
-2.) Run git branch -a to view remote branches(your name should not be here) and see which branch you are on. (There is a * next to the branch)
-3.) Run git checkout -b <thenameofyourbranch> to make a remote branch.
+- 1.) `git clone <repo>` DO NOT FORK
+- 2.) Run `git branch -a` to view remote branches(your name should not be here - yet) and see which branch you are on. (There is a * next to the branch)
+- 3.) Run `git checkout -b <thenameofyourbranch>` to make a remote branch.
 
 
 ### Part II
