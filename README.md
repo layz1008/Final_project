@@ -18,16 +18,17 @@ Members:
 
 
 ### Part II
-                    AFTER CHANGES HAVE BEEN LOCALLAY
+    AFTER CHANGES HAVE BEEN LOCALLY
 
 1.) `git add .`
 2.) `git commit -m 'a message that makes sense'`
-3.) *** This is important *** `git push origin <thenameofyourbranch>
+3.) *** This is important *** 
+- `git push origin <thenameofyourbranch>
 4.) Go onto github and create a pull request. Please add comments on what the code does /  updates you have made.
 
 
 ### Part III
-                    AFTER CHANGES HAVE BEEN MERGED WITH DEV BRANCH 
+    AFTER CHANGES HAVE BEEN MERGED WITH DEV BRANCH 
 
 1.) Please DO NOT pull cahnges ONTO your old code i.e the branch you just pushed and that got merged.  
 2.) PLEASE DO THE FOLLOWING: `git checkout -b <NEWthenameofyourNEWbranch> `
