@@ -41,6 +41,6 @@ Members:
 
 - 5.) Start from PART II
 
-*** Finally *** This is a life cycle ! it should feel like it has a flow.
+    *** Finally *** This is a life cycle ! it should feel like it has a flow.
 
 Please see: https://www.tutorialspoint.com/sdlc/sdlc_overview.htm
