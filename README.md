@@ -23,7 +23,7 @@ Members:
 - 1.) `git add .`
 - 2.) `git commit -m 'a message that makes sense'`
 - 3.) *** This is important ***  `git push origin <thenameofyourbranch>`
-4.) Go onto github and create a pull request. Please add comments on what the code does /  updates you have made.
+- 4.) Go onto github and create a pull request. Please add comments on what the code does /  updates you have made.
 
 
 ### Part III
