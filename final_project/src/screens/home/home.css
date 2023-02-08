@@ -1,0 +1,15 @@
+.home-page-filter-container{
+    
+    background-color: beige;
+}
+
+
+.filter-buttons{
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.toggle-filter{
+list-style-type: none;
+}
