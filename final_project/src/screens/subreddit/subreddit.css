@@ -1,26 +1,58 @@
 #subredditHeader{
     display:flex;
     flex-flow: row;
-    justify-content: center;
+    justify-content: space-around;
+    align-content: center;
+    background-color: orangered;
 }
 
-#subredditBannerDropdownMenu{
+#user-avatar{
+    align-self: center;
+    height: 35px;
+    width: 35px;
+    border-radius: 20px;
+}
+
+#title-subLink-join{
+    justify-items: space-around;
+    padding-bottom: 20px;
+}
+
+#sub-title{
+    margin-bottom: -5px;
+}
+
+#subreddit-description{
+    align-self: center;
+}
+
+#filter-div{
+    display:flex
+}
+
+#post-filter-options{
+    align-self: center
+}
+
+#subreddit-banner-dropdown-menu-label{
+    align-self: center;
     margin-right: 10px;
 }
 
-#newPostButton{
-    background-color: orange;
+#join-button{
+    align-self: center;
+    background-color: orangered;
     color: white;
     border: solid white;
     border-width: 2px;
     border-radius: 10px;
-    height: 50px;
+    height: 30px;
     width: 100px;
     font-size: medium;
 }
-#newPostButton:hover{
+#join-button:hover{
     background-color: white;
-    color: orange;
-    border: solid orange;
+    color: orangered;
+    border: solid orangered;
     transition-duration: .2s;
 }
