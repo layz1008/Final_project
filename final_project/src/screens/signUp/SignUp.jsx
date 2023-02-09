@@ -35,6 +35,34 @@ export default function SignUp() {
     setValid(null)
   }
 
+  const passwordValidation = (password) => {
+    const specialChar = /[\s~`!@#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?()\._]/g
+    const numChar = /\d/
+    if (password.length >= 6 && specialChar.test(password) && numChar.test(password))
+      return true
+    else
+      return false
+  }
+
+  const result = (validation) => {
+    if (validation === "") {
+      return <p></p>
+    } else if (validation === true) {
+      if (passwordValidation(user.password) === false) {  
+        return (
+          <>
+            <p>"Password Must Contain at least 6 letters"</p>
+            <p>"Password Must Include a Number and Special Character"</p>
+          </>   
+          )
+      } else {
+        return <Navigate to="/" replace={true} />
+      }
+    } else {
+      return "Password incorrect. Please try again."
+    }
+  }
+
   return (
     <div className="sign-up-main-container">
       <h1> Sign up page</h1>
