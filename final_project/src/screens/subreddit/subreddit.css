@@ -1,3 +1,13 @@
+#subredditHeader{
+    display:flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+#subredditBannerDropdownMenu{
+    margin-right: 1`0px;
+}
+
 #newPostButton{
     background-color: orange;
     color: white;

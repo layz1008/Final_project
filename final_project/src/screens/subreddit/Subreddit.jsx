@@ -7,8 +7,8 @@ export default function Subreddit() {
     <div className="home-page-main-container">
       <h1>This is where subreddits live </h1>
       
-      <div id ='subredditHeader'>Banner
-        <label for ='postFilters'className = 'dropDownMenu' id ='subredditBannerDropdownMenu'>Filter: </label>
+      <div id ='subredditHeader'>
+        <label for ='postFilters'className = 'dropDownMenu' id ='subredditBannerDropdownMenu'>Filter:</label>
         <select name = 'postFilters' id = 'postFilterOptions'>
           <option value = 'trending'>Trending</option>
           <option value = 'new'>New</option>
