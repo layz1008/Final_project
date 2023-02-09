@@ -58,23 +58,27 @@ export default function SignUp() {
         return <Navigate to="/" replace={true} />
       }
     } else {
-      return "Password incorrect. Please try again."
+      return (
+        <div className = "password-mismatch">
+          Passwords do not match. Please try again.
+        </div>
+      )
     }
   }
 
   return (
     <div className="sign-up-container">
       <form className="form" onSubmit={handleSubmit}>
-        <h1 className="sign-up-heading">Sign Up</h1>
+        <h1 className="sign-up-heading">SIGN UP</h1>
         <div className="inputs">
-        <input className="username"
+        <input className="signup-input"
           id="username"
           type="text" 
           placeholder="USERNAME" 
           value={username}
           onChange={(e)=> setUserName(e.target.value)}
         />
-        <input className="email"
+        <input className="signup-input"
           id="email"
           type="email" 
           placeholder="EMAIL" 
@@ -82,7 +86,7 @@ export default function SignUp() {
           onChange={(e)=> setEmail(e.target.value)}
         />
         <input 
-          id="password"
+          className="signup-input"
           type="password" 
           placeholder="PASSWORD"
           value={password} 
@@ -92,7 +96,7 @@ export default function SignUp() {
           title="Must be at least 6 characters and include at least 1 number, 1 letter, and 1 special character."
         />
         <input 
-          id="password-confirm"
+          className="signup-input"
           type="password" 
           placeholder="CONFIRM PASSWORD"
           value={passwordConfirm}
