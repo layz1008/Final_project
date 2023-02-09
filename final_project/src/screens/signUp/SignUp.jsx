@@ -18,10 +18,28 @@ export default function SignUp() {
   const [password, setPassword] = useState("")
   const [passwordConfirm, setPasswordConfirm] = useState("")
   const [valid, setValid] = useState("")
-  
-    return(
-  <div className="sign-up-main-container">
-    <h1> Sign up page</h1>
-  </div>
-    )
-}
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setUser({
+      username,
+      email,
+      password,
+      passwordConfirm,
+      valid: password === passwordConfirm ? (password !== "" ? true : "") : false
+    })
+
+    setEmail('')
+    setPassword('')
+    setPasswordConfirm('')
+    setValid(null)
+  }
+
+  return (
+    <div className="sign-up-main-container">
+      <h1> Sign up page</h1>
+    </div>
+  )
+} 
+
+
