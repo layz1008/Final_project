@@ -1,0 +1,41 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 31px;
+    background: #467172;
+    box-shadow: inset -5px -5px 8px #345454,
+        inset 5px 5px 8px #588e90;
+    position: fixed;
+    margin: auto;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    width: 40%;
+    min-width: 360px;
+}
+
+.sign-up-heading {
+    color: white;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: auto;
+    padding: 15px;
+    text-align: center;
+    font-size: 15px;
+    width: 50%
+}
+
+input {
+    padding: 15px;
+}
+
+p {
+    color: white;
+}

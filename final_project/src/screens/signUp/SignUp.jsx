@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
-// import user authentication 
 import "./signup.css";
 
 export default function SignUp() {
@@ -64,8 +63,53 @@ export default function SignUp() {
   }
 
   return (
-    <div className="sign-up-main-container">
-      <h1> Sign up page</h1>
+    <div className="sign-up-container">
+      <form className="form" onSubmit={handleSubmit}>
+        <h1 className="sign-up-heading">Sign Up</h1>
+        <div className="inputs">
+        <input className="username"
+          id="username"
+          type="text" 
+          placeholder="USERNAME" 
+          value={username}
+          onChange={(e)=> setUserName(e.target.value)}
+        />
+        <input className="email"
+          id="email"
+          type="email" 
+          placeholder="EMAIL" 
+          value={email}
+          onChange={(e)=> setEmail(e.target.value)}
+        />
+        <input 
+          id="password"
+          type="password" 
+          placeholder="PASSWORD"
+          value={password} 
+          minLength="6"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*?[~`!@#$%\^&*()\-_=+[\]{};:\x27.,\x22\\|/?><]).{6,}"
+          onChange={(e)=> setPassword(e.target.value)}
+        />
+        <p>
+          Must be at least 6 characters and include at least 
+          1 number, 1 letter, and 1 special character.</p>
+        <input 
+          id="password-confirm"
+          type="password" 
+          placeholder="CONFIRM PASSWORD"
+          value={passwordConfirm}
+          onChange={(e)=> {
+            return (setPasswordConfirm(e.target.value))
+          }}
+        />
+        </div>
+        <button
+          id="submit-password"
+          type="submit" 
+          value="submit">Submit
+        </button>
+        <>{result(user.valid)}</>
+      </form>
     </div>
   )
 } 
