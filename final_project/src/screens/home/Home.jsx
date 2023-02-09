@@ -20,7 +20,7 @@ export default function Home() {
         </ul>
         </div>
         <div className="user-assets-container">
-        <UserAssets />
+        {/* <UserAssets /> */}
         </div>
         <div className="home-page-post-container">
 
