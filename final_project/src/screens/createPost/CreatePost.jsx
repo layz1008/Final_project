@@ -1,6 +1,7 @@
-//import React from "react";
-import "./createpost.css"
 import React, { useState } from "react";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+import "./createpost.css";
 
 const CreatePost = () => {
   const [title, setTitle] = useState("");
@@ -29,8 +30,7 @@ const CreatePost = () => {
         </div>
         <div className="form-group">
           <label htmlFor="text">Text:</label>
-          <textarea
-            id="text"
+          <ReactQuill
             value={text}
             onChange={(e) => setText(e.target.value)}
             placeholder="Enter the text for your post"
