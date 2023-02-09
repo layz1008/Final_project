@@ -12,7 +12,7 @@ export default function Nav() {
           Home
         </NavLink>
         <NavLink className={"navBarInfo"} to="/create">
-          Post 
+          Create Post 
         </NavLink>
         <NavLink className={"navBarInfo"} to="/readmex2">
           ReadMe within a Readme
