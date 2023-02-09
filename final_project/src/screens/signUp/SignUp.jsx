@@ -89,10 +89,8 @@ export default function SignUp() {
           minLength="6"
           pattern="(?=.*\d)(?=.*[a-z])(?=.*?[~`!@#$%\^&*()\-_=+[\]{};:\x27.,\x22\\|/?><]).{6,}"
           onChange={(e)=> setPassword(e.target.value)}
+          title="Must be at least 6 characters and include at least 1 number, 1 letter, and 1 special character."
         />
-        <p>
-          Must be at least 6 characters and include at least 
-          1 number, 1 letter, and 1 special character.</p>
         <input 
           id="password-confirm"
           type="password" 
