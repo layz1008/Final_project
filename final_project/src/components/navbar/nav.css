@@ -1,8 +1,35 @@
-.navBar{
-    padding: 3rem;
+.navBar {
     display: flex;
-    justify-content:space-between;
-    align-items:flex-start
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    background-color: #ff4500;
+    padding: 5 20px;
     
-}
-
+  }
+  
+  .navBarInfo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 20px;
+  }
+  .navBarButton {
+    
+  }
+  
+  #navbar-buttons {
+    background-color: #8b0000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    margin-right: 20px;
+    
+  }
+  
+  #navbar-buttons:hover {
+    background-color: #b30000;
+    cursor: pointer;
+  }
+  
