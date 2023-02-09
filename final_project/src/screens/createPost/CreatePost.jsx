@@ -18,9 +18,10 @@ const CreatePost = () => {
     <div className="create-post">
       <h2>Create a New Post</h2>
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
+        <div className="inputbox">
           <label htmlFor="title">Title:</label>
           <input
+            required="required"
             type="text"
             id="title"
             value={title}
@@ -36,7 +37,14 @@ const CreatePost = () => {
             placeholder="Enter the text for your post"
           />
         </div>
-        <button type="submit">Submit</button>
+        <div class="button">
+        <button> CREATE POST
+</button>
+   
+</div>
+ 
+        
+        
       </form>
     </div>
   );
