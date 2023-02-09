@@ -5,10 +5,10 @@
 }
 
 #subredditBannerDropdownMenu{
-    margin-right: 1`0px;
+    margin-right: 10px;
 }
 
-#newPostButton{
+#join-subreddit{
     background-color: orange;
     color: white;
     border: solid white;
@@ -18,7 +18,7 @@
     width: 100px;
     font-size: medium;
 }
-#newPostButton:hover{
+#join-subreddit:hover{
     background-color: white;
     color: orange;
     border: solid orange;

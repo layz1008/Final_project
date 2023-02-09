@@ -5,17 +5,19 @@ import Post from "../../components/posts/Post";
 export default function Subreddit() {
   return (
     <div className="home-page-main-container">
-      <h1>This is where subreddits live </h1>
+      <h1>Sub - Title </h1>
       
       <div id ='subredditHeader'>
-        <label for ='postFilters'className = 'dropDownMenu' id ='subredditBannerDropdownMenu'>Filter:</label>
-        <select name = 'postFilters' id = 'postFilterOptions'>
+        <label for ='post-filters'className = 'drop-down-menu' id ='subreddit-banner-dropdownm-enu'>Filter:</label>
+        <select name = 'post-filters' id = 'postFilterOptions'>
           <option value = 'trending'>Trending</option>
           <option value = 'new'>New</option>
           <option valuer = 'hot'>Hot</option>
         </select>
       </div>
-      <button id = "newPostButton">New Post</button>
+    
+    {/* if join-subreddit == Join clicked. check if user object contains subreddit-ID then change button to Joined */}
+      <button id = "join-subreddit">Join</button>
       <Post/>
       <Post/>
       <Post/>
