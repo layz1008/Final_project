@@ -7,6 +7,7 @@ export default function Post({post, setModalPost, setDisplayModal}) {
     console.log("Modal was clicked")
     setModalPost(post)
     setDisplayModal(true)
+    document.body.classList.add("no-scroll")
   }
 
   return (
