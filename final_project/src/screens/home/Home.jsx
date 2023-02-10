@@ -43,6 +43,7 @@ export default function Home() {
           ))}
         </div>
         <PostModal modalPost={modalPost} displayModal={displayModal} setDisplayModal={setDisplayModal}/>
+        
       </div>
 
   )
