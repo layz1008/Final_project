@@ -1,4 +1,3 @@
-
 function PostModal(props) {
     const { displayModal, setDisplayModal } = props;
     const body = document.querySelector('body');
