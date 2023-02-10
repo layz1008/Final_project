@@ -1,5 +1,3 @@
-// Requests to the posts database here!
-
 import api from "./apiConfig.js";
 
 export const getPosts = async () => {

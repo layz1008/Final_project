@@ -1,33 +1,14 @@
-// function PostModal(props) {
-//     return(
-//         <div className={props.displayModal? "postModal" : 'hideElement'}>
-//             <div className="closeBtnContainer">
-//                 <h1>Hello, we are a modal</h1>
-//                 <div className="modalTitle">{}</div>
-//                 <div className="comments"> {}</div>
-//                 <div className="votes"> {}</div>
-//                 <div className="subreddit name"> {}</div>
-//                 <svg className="closepostModal" onClick={() => props.setDisplayModal(false)}>
-//                 <line x1='10' y1='12' x2='25' y2='12' stroke='#ffffff' strokeWidth='3' />
-//                 </svg>
-//             </div>
- 
-//         </div>
-//     )
-// }
-
-// export default PostModal
-
-function PostModal(props) {
+function PostModal({modalPost, displayModal, setDisplayModal}) {
     return(
-        <div className={props.displayModal? "postModal" : 'hideElement'}>
+        <div className={displayModal? "postModal" : 'hideElement'}>
             <div className="closeBtnContainer">
-                <h1>Hello, we are a modal</h1>
-                <div className="modalTitle">{}</div>
-                <div className="comments"> {}</div>
-                <div className="votes"> {}</div>
-                <div className="subreddit name"> {}</div>
-                <svg className="closepostModal" onClick={() => props.setDisplayModal(false)}>
+                <div className="modalTitle">{modalPost.title}</div>
+                {/* <img src={modalPost.img_url} /> */}
+                <div className="texts">{modalPost.text}</div>
+                <div className="sub-count"> {modalPost.sub}</div>
+                <div className="votes"> {modalPost.up_votes}</div>
+                <div className="votes2"> {modalPost.down_votes}</div>
+                <svg className="closepostModal" onClick={() => setDisplayModal(false)}>
                 <line x1='10' y1='12' x2='25' y2='12' stroke='#ffffff' strokeWidth='3' />
                 </svg>
             </div>
