@@ -37,7 +37,6 @@ export default function Home() {
         {/* <UserAssets /> */}
         </div>
         <div className="home-page-post-container">
-
           {posts.map(post => (
             <Post key={post.id} setDisplayModal={setDisplayModal} setModalPost={setModalPost} post={post}/>
           ))}
