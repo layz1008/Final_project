@@ -1,3 +1,4 @@
+
 function PostModal({modalPost, displayModal, setDisplayModal, comments}) {
     return(
         <div className={displayModal? "postModal" : 'hideElement'}>
@@ -15,6 +16,7 @@ function PostModal({modalPost, displayModal, setDisplayModal, comments}) {
                 </div>
                 <svg className="closepostModal" onClick={() => setDisplayModal(false)}>
                 <line x1='10' y1='12' x2='25' y2='12' stroke='#ffffff' strokeWidth='3' />
+
                 </svg>
             </div>
  
@@ -22,4 +24,4 @@ function PostModal({modalPost, displayModal, setDisplayModal, comments}) {
     )
 }
 
-export default PostModal
+export default PostModal;
