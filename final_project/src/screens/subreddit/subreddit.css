@@ -31,7 +31,9 @@
 }
 
 #post-filter-options{
-    align-self: center
+    align-self: center;
+    background-color: orangered;
+    
 }
 
 #subreddit-banner-dropdown-menu-label{
