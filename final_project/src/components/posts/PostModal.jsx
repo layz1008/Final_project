@@ -29,4 +29,4 @@ function PostModal(props) {
     )
 }
 
-export default PostModal
+export default PostModal;

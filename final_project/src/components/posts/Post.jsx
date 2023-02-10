@@ -10,6 +10,11 @@ export default function Post({post, setModalPost, setDisplayModal}) {
     document.body.classList.add("no-scroll")
   }
 
+  function handleClose() {
+    setDisplayModal(false);
+    document.body.classList.remove("no-scroll");
+  }
+
   return (
     <div onClick={handleClick} className="post-card">
       <h2>Title of the Post: </h2>
