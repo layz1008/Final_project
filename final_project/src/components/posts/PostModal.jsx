@@ -12,15 +12,16 @@ function PostModal(props) {
     }
 
     return(
-        <div className={props.displayModal? "postModal" : 'hideElement'}>
-            <div className="closeBtnContainer">
+        <div className={props.displayModal? "post-modal" : 'hide-element'}>
+            <div className="close-btn-container">
                 <h1>Hello, we are a modal</h1>
-                <div className="modalTitle">{}</div>
+                <div className="modal-title">{}</div>
                 <div className="comments"> {}</div>
                 <div className="votes"> {}</div>
-                <div className="subreddit name"> {}</div>
-                <svg className="closePostModal" onClick= {handleClose}>
-                <line x1='10' y1='12' x2='25' y2='12' stroke='#ffffff' strokeWidth='3' />
+                <div className="subreddit-name"> {}</div>
+                <svg className="close-post-modal" onClick= {handleClose}>
+                    <line x1='6' y1='30' x2='20' y2='10' stroke='#ffffff' strokeWidth='3' />
+                    <line x1='6' y1='10' x2='20' y2='30' stroke='#ffffff' strokeWidth='3' />
                 </svg>
             </div>
  

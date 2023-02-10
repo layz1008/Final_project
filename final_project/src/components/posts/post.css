@@ -37,11 +37,11 @@
   margin-left: 30px;
 }
 
-.hideElement {
+.hide-element {
   display: none;
 }
 
-.postModal {
+.post-modal {
   color: white;
   z-index: 1;
   border-radius: 17px;
@@ -52,9 +52,20 @@
   height: 90vw;
   top: 3%;
   left: 50%;
-  transform: translate(-50%)
+  transform: translate(-50%);
+  display: flex;
+  justify-content: space-between;
 }
 
 .freeze-body {
   overflow: hidden;
+}
+
+.close-post-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  width: 25px;
+  height: 40px;
 }
