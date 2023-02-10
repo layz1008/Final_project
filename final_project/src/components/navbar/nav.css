@@ -5,7 +5,14 @@
     height: 50px;
     background-color: #ff4500;
     padding: 5 20px;
-    
+  }
+
+  @media screen and (max-width: 400px) {
+    .post-modal {
+      width: 100vw;
+      height: 250vw;
+      top: 5%;
+    }  
   }
   
   .navBarInfo {
@@ -14,10 +21,7 @@
     font-size: 20px;
     margin-right: 20px;
   }
-  
-  
-  
-  
+
   #navbar-buttons {
     background-color: #8b0000;
     padding: 10px 20px;
@@ -26,8 +30,6 @@
     text-align: center;
     margin-right: 20px;
     text-decoration: none;
-    
-    
   }
   
   #navbar-buttons:hover {
@@ -40,4 +42,3 @@
     flex-direction: row;
 
   }
-  

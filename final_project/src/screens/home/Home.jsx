@@ -28,10 +28,10 @@ export default function Home() {
             <Post setDisplayModal={setDisplayModal} setModalPost={setModalPost} post={post}/>
           ))} */}
           <Post setDisplayModal={setDisplayModal} setModalPost={setModalPost}/>
-          <Post  />
-          <Post  />
-          <Post  />
-          <Post  />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
         </div>
         <PostModal modalPost={modalPost} displayModal={displayModal} setDisplayModal={setDisplayModal}/>
       </div>
