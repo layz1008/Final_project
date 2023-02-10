@@ -8,14 +8,14 @@ export default function Nav() {
   return (
     <div>
       <nav className="navBar">
-        <NavLink className={"navBarInfo"} to="/">
+        <NavLink className={"navBarInfo Link"} to="/">
           Home
         </NavLink>
-        <NavLink className={"navBarInfo"} to="/create">
+        <NavLink className={"navBarInfo Link"} to="/create">
           Create Post 
         </NavLink>
-        <NavLink className={"navBarInfo"} to="/readmex2">
-          ReadMe within a Readme
+        <NavLink className={"navBarInfo Link"} to="/readmex2">
+          ReadMe
         </NavLink>
         <div className="navBarInfo" id="barButton">
         <NavLink className={"navBarInfo"} id="navbar-buttons" to="/signup">

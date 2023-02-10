@@ -38,10 +38,11 @@ const CreatePost = () => {
           />
         </div>
         <div>
-        <button className="createButton"> CREATE POST
-</button>
+        <button>
+           POST
+        </button>
    
-</div>
+        </div>
  
         
         
