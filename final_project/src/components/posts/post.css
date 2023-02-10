@@ -25,8 +25,15 @@
   width: 80vw;
   height: 50vw;
   z-index: 999;
-  position: absolute;
+  margin: 5% auto;
+  position: fixed;
   left: 10vw;
   border: 5px rgba(0, 0, 0, 0.388) solid;
   box-shadow: 7px 7px 2px 0.5px;
+  top: 5%;
+  height: 100vh;
+}
+
+.freeze-body {
+  overflow: hidden;
 }

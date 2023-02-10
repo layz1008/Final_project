@@ -129,10 +129,12 @@ button {
     border-radius: 16px;
     border: 1px solid transparent;
     color: #FFFFFF;
-    background-color: #1DC9A0;
+    background-color: #467172;
     font-size: 16px;
     letter-spacing: 1px;
     transition: all 0.15s linear;
+    border-color: #1DC9A0;
+    color: #1DC9A0;
    }
    
    button:hover {
