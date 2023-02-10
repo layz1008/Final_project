@@ -17,7 +17,7 @@
 // }
 
 // export default PostModal
-import { Modal } from "react-responsive-modal"
+
 function PostModal(props) {
     return(
         <div className={props.displayModal? "postModal" : 'hideElement'}>
