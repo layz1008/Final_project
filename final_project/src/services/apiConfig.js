@@ -1,20 +1,13 @@
 import axios from 'axios'
 
+const api = axios.create({
+  baseURL: process.env.NODE_ENV === 'production' ? 'https://final-project-server-production.up.railway.app/' : 'https://final-project-server-production.up.railway.app/'
+})
 
 
-const apiUrls = {
-      production: "",
-      development: "http://localhost:3000",
-    };
-    
-    if (window.location.hostname === "localhost") {
-      apiUrl = apiUrls.development;
-    } else {
-      apiUrl = apiUrls.production;
-    }
-    
+export default api;
 
 
 
-export default backEnd
+
 
