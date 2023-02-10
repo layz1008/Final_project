@@ -1,7 +1,7 @@
 import React from "react";
 import "./userassets.css";
 
-export default function Post() {
+export default function UserAssets() {
     return(
   <div className="user-assets-card">
     <ul className="user-assets-list">

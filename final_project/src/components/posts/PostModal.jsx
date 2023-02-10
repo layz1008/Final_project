@@ -1,3 +1,4 @@
+
 function PostModal(props) {
     const { displayModal, setDisplayModal } = props;
     const body = document.querySelector('body');
@@ -31,6 +32,7 @@ function PostModal(props) {
               stroke-width="3"
             />
           </svg>
+
         </div>
       </div>
     );
