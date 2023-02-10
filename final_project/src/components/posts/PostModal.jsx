@@ -1,27 +1,22 @@
-function PostModal(props) {
-    const { displayModal, setDisplayModal } = props;
-    const body = document.querySelector("body");
 
-    const handleClose = () => {
-        setDisplayModal(false);
-        body.classList.remove('freeze-body');
-    };
-
-    if (displayModal) {
-        body.classList.add('freeze-body');
-    }
-
+function PostModal({modalPost, displayModal, setDisplayModal, comments}) {
     return(
-        <div className={props.displayModal? "post-modal" : 'hide-element'}>
-            <div className="close-btn-container">
-                <h1>Hello, we are a modal</h1>
-                <div className="modal-title">{}</div>
-                <div className="comments"> {}</div>
-                <div className="votes"> {}</div>
-                <div className="subreddit-name"> {}</div>
-                <svg className="close-post-modal" onClick= {handleClose}>
-                    <line x1='6' y1='30' x2='20' y2='10' stroke='#ffffff' strokeWidth='3' />
-                    <line x1='6' y1='10' x2='20' y2='30' stroke='#ffffff' strokeWidth='3' />
+        <div className={displayModal? "postModal" : 'hideElement'}>
+            <div className="closeBtnContainer">
+                <div className="modalTitle">{modalPost.title}</div>
+                {/* <img src={modalPost.img_url} /> */}
+                <div className="texts">{modalPost.text}</div>
+                <div className="sub-count"> {modalPost.sub}</div>
+                <div className="votes"> {modalPost.up_votes}</div>
+                <div className="votes2"> {modalPost.down_votes}</div>
+                <div className="comments">
+                    {comments.filter(comment => comment.post == modalPost.id).map(comment => (
+                        <p key={comment.id}>{comment.comment}</p>
+                    ))}
+                </div>
+                <svg className="closepostModal" onClick={() => setDisplayModal(false)}>
+                <line x1='10' y1='12' x2='25' y2='12' stroke='#ffffff' strokeWidth='3' />
+
                 </svg>
             </div>
  

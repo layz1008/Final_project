@@ -3,11 +3,13 @@ import "./home.css";
 import Post from "../../components/posts/Post.jsx";
 import UserAssets from "../../components/user_assets/UserAssets.jsx";
 import PostModal from "../../components/posts/PostModal";
-import {getPosts} from "../../services/posts.js"
+import { getPosts } from "../../services/posts.js"
+import { getComments } from "../../services/comments.js";
 
 export default function Home() {
 
   const [posts, setPosts] = useState([])
+  const [comments, setComments] = useState([])
   const [modalPost, setModalPost] = useState({})
   const [displayModal, setDisplayModal] = useState(false)
 
@@ -18,6 +20,16 @@ export default function Home() {
     }
 
     fetchPosts()
+  }, [])
+
+
+  useEffect(()=>{
+    const fetchComment = async () => {
+      const response = await getComments()
+      setComments(response)
+    }
+
+    fetchComment()
   }, [])
 
   return (
@@ -40,8 +52,9 @@ export default function Home() {
           {posts.map(post => (
             <Post key={post.id} setDisplayModal={setDisplayModal} setModalPost={setModalPost} post={post}/>
           ))}
+          
         </div>
-        <PostModal modalPost={modalPost} displayModal={displayModal} setDisplayModal={setDisplayModal}/>
+        <PostModal modalPost={modalPost} displayModal={displayModal} setDisplayModal={setDisplayModal} comments={comments}/>
       </div>
 
   )
