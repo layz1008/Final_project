@@ -46,15 +46,21 @@
 }
 
 .postModal {
-  color: white;
-  height: 20vw;
-  /* z-index: 1; */
-  /* left: 10vw; */
-  border-radius: 17px;
-  background: linear-gradient(145deg, #385a5a, #2f4c4c);
+
+  background-color: rgb(210, 138, 23);
+  width: 80vw;
+  height: 50vw;
+  z-index: 999;
   margin: 5% auto;
-  padding: 1px 20px;
-  width: 50%;
   position: fixed;
-  top: 5%
+  left: 10vw;
+  border: 5px rgba(0, 0, 0, 0.388) solid;
+  box-shadow: 7px 7px 2px 0.5px;
+  top: 5%;
+  height: 100vh;
+}
+
+.freeze-body {
+  overflow: hidden;
+
 }

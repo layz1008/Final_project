@@ -24,10 +24,13 @@ export default function Home() {
     <div className="home-page-main-container">
       <div className= "home-page-filter-container">
         <p className="filter-text"> Filter By:</p>
-        <ul className="filter-buttons">
-          <li className="toggle-filter"> <button> Most Up Votes  👍</button></li>
-          <li className="toggle-filter"> <button> Most Down Votes 👎 </button></li>
-          <li className="toggle-filter"> <button> Trending 🔥 </button></li>
+        <ul className="filter-button">
+        <select className="filter-dropdown">
+          <option value="mostUpVotes">Most Up Votes 👍</option>
+          <option value="mostDownVotes">Most Down Votes 👎</option>
+          <option value="trending">Trending 🔥</option>
+        </select>
+
         </ul>
         </div>
         <div className="user-assets-container">

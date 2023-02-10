@@ -6,6 +6,10 @@ body {
   
   
   .create-post {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     max-width: 600px;
     margin: 0 auto;
     margin-top: 200px;
@@ -13,9 +17,10 @@ body {
     padding: 100px;
     background-color: #f2f2f2;
     border-radius: 43px;
-    background: #dbdbe6;
-    box-shadow: inset -35px -35px 68px #adadb6,
-                inset 35px 35px 68px #ffffff;
+    background: #467172;
+    box-shadow: inset -35px -35px 68px #467172,
+                inset 35px 35px 68px #467172;
+                
   }
   
   .create-post h2 {
@@ -33,6 +38,7 @@ body {
     width: 100%;
     text-align: left;
     margin-bottom: 20px;
+    margin-top: 2.5rem;
   }
   
   .create-post label {
@@ -60,67 +66,8 @@ body {
     border: 1px solid gray;
     box-sizing: border-box;
   }
-  
-  
-  .createButton {
-    height: 2.8em;
-    width: 9em;
-    background: transparent;
-    -webkit-animation: jello-horizontal 0.9s both;
-    animation: jello-horizontal 0.9s both;
-    border: 2px solid rgb(50, 208, 50);
-    outline: none;
-    color: rgb(50, 208, 50);
-    font-size: 17px;
-   }
-   
-   .createButton:hover {
-    background: rgb(50, 208, 50);
-    color: #ffffff;
-    animation: squeeze3124 0.9s both;
-   }
-   
-   @keyframes squeeze3124 {
-    0% {
-     -webkit-transform: scale3d(1, 1, 1);
-     transform: scale3d(1, 1, 1);
-    }
-   
-    30% {
-     -webkit-transform: scale3d(1.25, 0.75, 1);
-     transform: scale3d(1.25, 0.75, 1);
-    }
-   
-    40% {
-     -webkit-transform: scale3d(0.75, 1.25, 1);
-     transform: scale3d(0.75, 1.25, 1);
-    }
-   
-    50% {
-     -webkit-transform: scale3d(1.15, 0.85, 1);
-     transform: scale3d(1.15, 0.85, 1);
-    }
-   
-    65% {
-     -webkit-transform: scale3d(0.95, 1.05, 1);
-     transform: scale3d(0.95, 1.05, 1);
-    }
-   
-    75% {
-     -webkit-transform: scale3d(1.05, 0.95, 1);
-     transform: scale3d(1.05, 0.95, 1);
-    }
-   
-    100% {
-     -webkit-transform: scale3d(1, 1, 1);
-     transform: scale3d(1, 1, 1);
-    }
-   }
-   
-  
-  .ql-tooltip {
-    display:table-caption
-  }
+
+
   
   .input-form {
   position: relative;
@@ -171,3 +118,92 @@ body {
     width: 100%;
     text-align: left;
 }
+
+button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 38px;
+    border-radius: 16px;
+    border: 1px solid transparent;
+    color: #FFFFFF;
+    background-color: #467172;
+    font-size: 16px;
+    letter-spacing: 1px;
+    transition: all 0.15s linear;
+    border-color: #1DC9A0;
+    color: #1DC9A0;
+   }
+   
+   button:hover {
+    background-color: rgba(29, 201, 160, 0.08);
+    border-color: #1DC9A0;
+    color: #1DC9A0;
+    transform: translateY(-5px) scale(1.05);
+   }
+   
+   button:active {
+    background-color: transparent;
+    border-color: #1DC9A0;
+    color: #1DC9A0;
+    transform: translateY(5px) scale(0.95);
+   }
+   
+   button:disabled {
+    background-color: rgba(255, 255, 255, 0.16);
+    color: #8E8E93;
+    border-color: #8E8E93;
+   }
+
+   @media only screen and (max-width: 768px) {
+    .create-post {
+      padding: 50px;
+      justify-content: center;
+    }
+  
+    .create-post h2 {
+      font-size: 20px;
+    }
+  
+    .create-post input,
+    .create-post textarea,
+    .create-post .ql-container {
+      font-size: 14px;
+    }
+  
+    .create-post select {
+      font-size: 14px;
+    }
+  
+    button {
+      padding: 10px 25px;
+      font-size: 14px;
+    }
+  }
+  
+  @media only screen and (max-width: 576px) {
+    .create-post {
+      padding: 25px;
+    }
+  
+    .create-post h2 {
+      font-size: 18px;
+    }
+  
+    .create-post input,
+    .create-post textarea,
+    .create-post .ql-container {
+      font-size: 12px;
+    }
+  
+    .create-post select {
+      font-size: 12px;
+    }
+  
+    button {
+      padding: 8px 20px;
+      font-size: 12px;
+    }
+  }
+  
