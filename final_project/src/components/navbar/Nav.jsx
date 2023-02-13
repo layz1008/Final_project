@@ -4,13 +4,20 @@ import "./nav.css"
 
 // We will eventually need some functions up here for authentication
 
-export default function Nav() {
+export default function Nav({ search, handleSearch }) {
   return (
     <div>
       <nav className="navBar">
         <NavLink className={"navBarInfo Link"} to="/">
           Home
         </NavLink>
+        <div className="search">
+        <input
+          type="text"
+          className="nav-searchInput"
+          onChange={handleSearch}
+        />
+        </div>
         <NavLink className={"navBarInfo Link"} to="/create">
           Create Post 
         </NavLink>
