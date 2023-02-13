@@ -1,11 +1,29 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./nav.css"
+import SignInModal from "./SignIn.jsx";
+
 
 // We will eventually need some functions up here for authentication
 
-export default function Nav({ search, handleSearch }) {
-  return (
+// export default function Nav() {
+  // class Navbar({search, handleSearch}) extends React.Component {
+export default function Nav({ search, handleSearch}) {
+
+  state = {modalOpen:false}
+
+  handleModalOpen = () => {
+    this.setState((prevState) => {
+       return{
+          modalOpen: !prevState.modalOpen
+       }})
+    }
+
+  handleSignIn= (username, password) => {}
+ 
+
+
+    return (
     <div>
       <nav className="navBar">
         <NavLink className={"navBarInfo Link"} to="/">
@@ -24,15 +42,22 @@ export default function Nav({ search, handleSearch }) {
         <NavLink className={"navBarInfo Link"} to="/readmex2">
           ReadMe
         </NavLink>
-        <div className="navBarInfo" id="barButton">
         <NavLink className={"navBarInfo"} id="navbar-buttons" to="/signup">
           Sign-Up
         </NavLink>
-        <NavLink className={"navBarInfo"} id="navbar-buttons" to="/signin">
-          Sign-In
-        </NavLink>
-        </div>
-      </nav>
+
+      <p onClick={this.handleModalOpen} className={"navBarInfo"} id="navbar-buttons" >
+            Sign-In
+          </p>
+        </nav>
+        <SignInModal
+              modalOpen={this.state.modalOpen}
+              handleModalOpen={this.handleModalOpen}
+              handleSignIn={this.handleSignIn}
+           />
     </div>
-  );
+  )
 }
+
+
+
