@@ -5,11 +5,13 @@ import Button from 'react-bootstrap/Button';
 const SignInModal = (props) => {
   return(
    <>
-   <Modal show={props.modalOpen} onHide={props.handleModalOpen}>
+   <Modal 
+      show={props.modalOpen} 
+      onHide={props.handleModalOpen}>   
        <Modal.Header closeButton>
           <Modal.Title>Login</Modal.Title>
        </Modal.Header>
-       <Modal.Body className="SignInForm">
+       <Modal.Body>
        <form>
         <label>
           <p>Username</p>
@@ -25,7 +27,7 @@ const SignInModal = (props) => {
       </form>
        </Modal.Body>
        <Modal.Footer>
-          <Button variant="danger" onClick={props.handleModalOpen}>
+          <Button variant="cancel" onClick={props.handleModalOpen}>
              Cancel
           </Button>
        </Modal.Footer>
