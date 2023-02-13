@@ -2,18 +2,30 @@ import React, { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import "./createpost.css";
+import { createPost } from "../../services/posts";
 
 const CreatePost = () => {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
-  const [imageURL, setImageURL] = useState("");
+  const [img_url, setImageUrl] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(`Submitting Title: ${title}, Text: ${text}, and Image URL: ${imageURL}`);
-    setTitle("");
-    setText("");
-    setImageURL("");
+    const post = {
+      title: title,
+      text: text,
+      img_url: img_url,
+      up_votes: 0,
+      down_votes: 0,
+      user: 1,
+      sub: 2,
+    };
+    try {
+      await createPost(post);
+      console.log("Post submitted successfully");
+    } catch (error) {
+      console.error("Error submitting the post: ", error);
+    }
   };
 
   return (
@@ -32,27 +44,25 @@ const CreatePost = () => {
           />
         </div>
         <div className="inputbox">
-          <label htmlFor="imageURL">Image URL:</label>
+          <label htmlFor="imageUrl">Image URL:</label>
           <input
             type="text"
-            id="imageURL"
-            value={imageURL}
-            onChange={(e) => setImageURL(e.target.value)}
-            placeholder="Enter the URL of the image you want to use"
+            id="imageUrl"
+            value={img_url}
+            onChange={(e) => setImageUrl(e.target.value)}
+            placeholder="Enter the URL for your post's image"
           />
         </div>
         <div className="form-group">
           <label htmlFor="text">Text:</label>
           <ReactQuill
             value={text}
-            onChange={(e) => setText(e.target.value)}
+            onChange={(value) => setText(value)}
             placeholder="Enter the text for your post"
           />
         </div>
         <div>
-          <button>
-            POST
-          </button>
+          <button type="submit">POST</button>
         </div>
       </form>
     </div>

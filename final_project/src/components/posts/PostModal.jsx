@@ -15,7 +15,7 @@ function PostModal({modalPost, displayModal, setDisplayModal, comments}) {
         <div className={displayModal? "post-modal" : 'hide-element'}>
             <div className="close-btn-container">
                 <div className="modal-title">{modalPost.title}</div>
-                {/* <img src={modalPost.img_url} /> */}
+                <img src={modalPost.img_url} />
                 <div className="texts">{modalPost.text}</div>
                 <div className="sub-count"> {modalPost.sub}</div>
                 <div className="votes"> {modalPost.up_votes}</div>
