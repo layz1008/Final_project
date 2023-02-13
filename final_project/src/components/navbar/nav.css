@@ -2,94 +2,61 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 50px;
-    background-color: #ff4500;
+    height: 80px;
+    background-color: #467172;
     padding: 5 20px;
-    
-  }
-  
-  .navBarInfo {
-    color: #fff;
-    text-decoration: none;
-    font-size: 20px;
-    margin-right: 20px;
-  }
-  
-  
-  
-  
-  #navbar-buttons {
-    background-color: #8b0000;
-    padding: 10px 20px;
-    border-radius: 5px;
-    color: #fff;
-    text-align: center;
-    margin-right: 20px;
-    text-decoration: none;
-    
-    
-  }
-  
-  #navbar-buttons:hover {
-    background-color: #b30000;
-    cursor: pointer;
   }
 
-  #barButton {
-    display: flex;
-    flex-direction: row;
+@media screen and (max-width: 400px) {
+  .post-modal {
+    width: 100vw;
+    height: 250vw;
+    top: 5%;
+  }  
+}
 
-  }
+.navBarInfo {
+  color: #fff;
+  text-decoration: none;
+  font-size: 25px;
+  margin-left: 1.5rem;
+}
+
+#navbar-buttons {
+  padding: 17px 40px;
+  border-radius: 50px;
+  border: 0;
+  background-color: white;
+  box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 15px;
+  transition: all .5s ease;
+  color: black;
+}
+
+#navbar-buttons:hover {
+  background-color: #1DC9A0;
+  cursor: pointer;
+  letter-spacing: 3px;
+  background-color: #1DC9A0(261deg 80% 48%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: #1DC9A0 0px 7px 29px 0px;
+}
+
+#barButton {
+  display: flex;
+  flex-direction: row;
+}
+
+#navbar-buttons:active {
+  letter-spacing: 3px;
+  background-color: hsl(261deg 80% 48%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+  transform: translateY(10px);
+  transition: 100ms;
+}
+
+
   
-
-
-.modal {
-  width: 250px;
-  height: 170px;
-  background: white;
-  color: white;
-  border-radius: 16px;
-  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
-  text-align: center;
-  padding: 0!important;
-}
-
-
-.modal-dialog {
-  display: inline-block;
-  text-align: left;
-  vertical-align: middle;
-}
-
-.modalHeader {
-    height: 30px;
-    background: white;
-    overflow: hidden;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
-}
-
-.modalTitle {
-    margin: 0;
-    padding: 10px;
-    color: #2c3e50;
-    font-weight: 500;
-    font-size: 18px;
-    text-align: center;
-}
-
-.modalContent {
-    padding: 10px;
-    font-size: 14px;
-    color: #2c3e50;
-    text-align: center;
-}
-  
-.modalActions {
-    position: absolute;
-    bottom: 2px;
-    margin-bottom: 10px;
-    width: 100%;
-}
-
- 
