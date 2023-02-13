@@ -6,12 +6,14 @@ import "./createpost.css";
 const CreatePost = () => {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
+  const [imageURL, setImageURL] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(`Submitting Title: ${title} and Text: ${text}`);
+    console.log(`Submitting Title: ${title}, Text: ${text}, and Image URL: ${imageURL}`);
     setTitle("");
     setText("");
+    setImageURL("");
   };
 
   return (
@@ -29,6 +31,16 @@ const CreatePost = () => {
             placeholder="Enter a title for your post"
           />
         </div>
+        <div className="inputbox">
+          <label htmlFor="imageURL">Image URL:</label>
+          <input
+            type="text"
+            id="imageURL"
+            value={imageURL}
+            onChange={(e) => setImageURL(e.target.value)}
+            placeholder="Enter the URL of the image you want to use"
+          />
+        </div>
         <div className="form-group">
           <label htmlFor="text">Text:</label>
           <ReactQuill
@@ -38,14 +50,10 @@ const CreatePost = () => {
           />
         </div>
         <div>
-        <button>
-           POST
-        </button>
-   
+          <button>
+            POST
+          </button>
         </div>
- 
-        
-        
       </form>
     </div>
   );
