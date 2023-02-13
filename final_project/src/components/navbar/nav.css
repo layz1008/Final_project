@@ -8,11 +8,11 @@
   }
 
 @media screen and (max-width: 400px) {
-  .post-modal {
+  /* .post-modal {
     width: 100vw;
     height: 250vw;
     top: 5%;
-  }  
+  }   */
 }
 
 .navBarInfo {
