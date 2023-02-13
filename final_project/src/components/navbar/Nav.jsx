@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./nav.css"
 import SignInModal from "./SignIn.jsx";
@@ -8,18 +8,20 @@ import SignInModal from "./SignIn.jsx";
 
 // export default function Nav() {
   // class Navbar({search, handleSearch}) extends React.Component {
-export default function Nav({ search, handleSearch}) {
+export default function Nav({search, handleSearch}) {
+  // class Navbar extends React.Component{
 
-  state = {modalOpen:false}
+  // const [state, setState] = useState(false)
+  // const state = {modalOpen:false}
 
-  handleModalOpen = () => {
-    this.setState((prevState) => {
-       return{
-          modalOpen: !prevState.modalOpen
-       }})
-    }
+  // const handleModalOpen = () => {
+  //   setState((prevState) => {
+  //      return{
+  //         modalOpen: !prevState.modalOpen
+  //      }})
+  //   }
 
-  handleSignIn= (username, password) => {}
+  // const handleSignIn = (username, password) => {}
     return (
     <div>
       <nav className="navBar">
@@ -43,15 +45,15 @@ export default function Nav({ search, handleSearch}) {
           Sign-Up
         </NavLink>
 
-      <p onClick={this.handleModalOpen} className={"navBarInfo"} id="navbar-buttons" >
+      {/* <p onClick={this.handleModalOpen} className={"navBarInfo"} id="navbar-buttons" >
             Sign-In
-          </p>
+          </p> */}
         </nav>
-        <SignInModal
-              modalOpen={this.state.modalOpen}
-              handleModalOpen={this.handleModalOpen}
-              handleSignIn={this.handleSignIn}
-           />
+        {/* <SignInModal
+              modalOpen={state.modalOpen}
+              handleModalOpen={handleModalOpen}
+              handleSignIn={handleSignIn}
+           /> */}
     </div>
   )
 }
