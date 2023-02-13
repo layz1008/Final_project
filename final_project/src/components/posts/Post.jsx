@@ -2,7 +2,7 @@ import React from "react";
 import "./post.css";
 import { useState, useEffect } from "react";
 import { getComments, getComment } from "../../services/comments";
-import { getPost } from "../../services/posts";
+import { getPost, getPosts } from "../../services/posts";
 
 export default function Post({post, setModalPost, setDisplayModal}) {
 
@@ -10,6 +10,8 @@ export default function Post({post, setModalPost, setDisplayModal}) {
   const [upvote, setUpvote] = useState(0)
   const [downvote, setDownvote] = useState(0)
   const [totalvote, setTotalvote] = useState(0)
+  const [title, setTitle] = useState('')
+  const [image, setImage] = useState('')
   
   async function commentMetrics(){
       let res = await getComments()
@@ -20,13 +22,18 @@ export default function Post({post, setModalPost, setDisplayModal}) {
     }
 
     async function postMetrics(){
-      let res = await getPost(3)
+      let res = await getPost(4)
       let ups = res.up_votes
       let downs = res.down_votes
+      let postTitle = res.title
       let totes = (ups - downs)
+      let image = res.img_url
+      console.log(image)
       setUpvote(ups)
       setDownvote(downs)
       setTotalvote(totes)
+      setTitle(postTitle)
+      setImage(image)
     }
   postMetrics()
   commentMetrics()
@@ -40,9 +47,9 @@ export default function Post({post, setModalPost, setDisplayModal}) {
 
   return (
     <div onClick={handleClick} className="post-card">
-      <h2>Title of the Post: </h2>
+      <h2>{title} </h2>
       <img
-        src="https://www.explore.com/img/gallery/the-most-beautiful-coral-reefs-in-the-world/great-barrier-reef-australia-1667589677.jpg"
+        src={image}
         alt="123">
       </img>
       <div id = 'votes-div'>
