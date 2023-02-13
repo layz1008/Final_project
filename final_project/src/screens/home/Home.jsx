@@ -50,10 +50,8 @@ export default function Home() {
         </div>
         <div className="home-page-post-container">
           {posts.map(post => (
-            <Post key={post.id} setDisplayModal={setDisplayModal} setModalPost={setModalPost} post={post}/>
+            <Post key={post.id} setDisplayModal={setDisplayModal} setModalPost={setModalPost} post={post}/> 
           ))}
-          
         </div>
-
-  )
-}
+        </div>
+    )}
