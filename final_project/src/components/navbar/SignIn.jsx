@@ -5,13 +5,14 @@ import Button from 'react-bootstrap/Button';
 const SignInModal = (props) => {
   return(
    <>
-   <Modal 
+   <Modal
+      className="modal"
       show={props.modalOpen} 
       onHide={props.handleModalOpen}>   
-       <Modal.Header closeButton>
-          <Modal.Title>Login</Modal.Title>
+       <Modal.Header className="modalHeader" closeButton>
+          <Modal.Title className='modalTitle'>Login</Modal.Title>
        </Modal.Header>
-       <Modal.Body>
+       <Modal.Body className='modalContent'>
        <form>
         <label>
           <p>Username</p>
