@@ -20,9 +20,6 @@ export default function Nav({ search, handleSearch}) {
     }
 
   handleSignIn= (username, password) => {}
- 
-
-
     return (
     <div>
       <nav className="navBar">
