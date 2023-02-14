@@ -29,7 +29,9 @@ function HamburgerMenu() {
           <div className="hamburger-subreddits">
             {subs.map((sub, index) => (
                 <li key={index}>
-                    {sub.title}
+                    <Link to = {`/subs/${index+1}`}>
+                        {sub.title}
+                    </Link>
                 </li>
             ))}
           </div>

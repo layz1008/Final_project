@@ -31,15 +31,6 @@ export default function Home() {
     fetchComment();
   }, []); 
 
-  // useEffect(() => {
-  //   const fetchSubs = async () => {
-  //     const response = await getSubs();
-  //     setSubs(response);
-  //   };
-
-  //   fetchSubs();
-  // }, []); 
-
   return (
     <div className="home-page-main-container">
       <div className="home-page-filter-container">
