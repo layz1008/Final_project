@@ -50,6 +50,7 @@
   
   .post {
     width: 300px;
+    /* width: 10px; */
     height: 400px;
     margin: 20px;
     border: 1px solid gray;

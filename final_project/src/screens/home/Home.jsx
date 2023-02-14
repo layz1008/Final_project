@@ -12,6 +12,7 @@ export default function Home() {
   const [modalPost, setModalPost] = useState({});
   const [displayModal, setDisplayModal] = useState(false);
 
+
   useEffect(() => {
     fetchPosts();
   }, []);
