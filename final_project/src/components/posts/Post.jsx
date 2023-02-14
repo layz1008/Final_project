@@ -1,7 +1,7 @@
 import React from "react";
 import "./post.css";
 
-export default function Post({ post, setModalPost, setDisplayModal }) {
+export default function Post({ post, setModalPost, setDisplayModal, modalPost, comments, }) {
   function handleClick() {
     console.log("Modal was clicked");
     setModalPost(post);
@@ -23,7 +23,7 @@ export default function Post({ post, setModalPost, setDisplayModal }) {
           {" "}
           ⬇: {post.down_votes}{" "}
         </span>
-        <p id="comments-tab"> 💬 </p>
+        <p id="comments-tab"> {comments.filter(comment => comment.post === post.id).length}  people are talking about this 💬 </p>
       </div>
     </div>
   );
