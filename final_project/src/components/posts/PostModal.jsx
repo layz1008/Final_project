@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import "./post.css";
 
 function PostModal({modalPost, displayModal, setDisplayModal, comments}) {
