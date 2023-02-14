@@ -84,6 +84,7 @@ export default function Subreddit() {
             setDisplayModal={setDisplayModal}
             setModalPost={setModalPost}
             post={post}
+            comments={comments}
           />
         ))}
 
