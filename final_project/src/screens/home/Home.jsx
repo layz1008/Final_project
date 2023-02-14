@@ -28,7 +28,7 @@ export default function Home() {
     };
 
     fetchComment();
-  }, []);
+  }, []); 
 
   return (
     <div className="home-page-main-container">
