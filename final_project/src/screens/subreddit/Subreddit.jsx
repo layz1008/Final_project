@@ -68,7 +68,7 @@ export default function Subreddit() {
 
 
   return (
-    <div className="home-page-main-container">
+      <div className="home-page-main-container">
       
       {/* request the "Subs" title, link,  followers, comments, upVotes and downVotes from the subs Library using the subs id
       comments tab will display a number of comment total instances.
@@ -112,5 +112,6 @@ export default function Subreddit() {
         comments={comments}
         />
     </div>
+    
   );
 }
