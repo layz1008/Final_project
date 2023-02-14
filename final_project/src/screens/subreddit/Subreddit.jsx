@@ -1,13 +1,37 @@
 import React from "react";
 import "./subreddit.css";
 import Post from "../../components/posts/Post";
+import PostModal from "../../components/posts/PostModal";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import { useState, useEffect } from "react";
+import { getPosts } from "../../services/posts";
+import { getComments } from "../../services/comments";
 
-export default function Subreddit() {
-  // let subId = axios.get();
-  // let subrTitle = axios.get();
-  // let usrImg = axios.get();
+
+export default function Subreddit(post) {
+  const [posts, setPosts] = useState([]);
+  const [modalPost, setModalPost] = useState({});
+  const [displayModal, setDisplayModal] = useState(false);
+  const [comments, setComments] = useState([]);
+
+  useEffect(() => {
+    fetchPosts();
+  }, []);
+
+  async function fetchPosts() {
+    const allPosts = await getPosts();
+    setPosts(allPosts);
+  }
+
+  useEffect(() => {
+    const fetchComment = async () => {
+      const response = await getComments();
+      setComments(response);
+    };
+
+    fetchComment();
+  }, []); 
+
 
   return (
     <div className="home-page-main-container">
@@ -31,17 +55,27 @@ export default function Subreddit() {
           <label for ='post-filters'className = 'drop-down-menu' id ='subreddit-banner-dropdown-menu-label'>Post Filters:  </label>
           <select name = 'post-filters' id = 'post-filter-options'>
             <option value = 'trending'>Trending</option>
-            <option value = 'new'>New</option>
-            <option value = 'hot'>Hot</option>
+            <option value = 'mostUpVotes'>Most Upvotes</option>
+            <option value = 'mostDownVotes'>Most Downvotes</option>
           </select>
         </div>
       </div>
-    
     {/* if join-subreddit == Join clicked. check if user object contains subreddit-ID then change button to Joined if not display join */}
-     
-      <Post/>
-      <Post/>
-      <Post/>
+    {posts.map((post) => (
+          <Post
+            key={post.id}
+            setDisplayModal={setDisplayModal}
+            setModalPost={setModalPost}
+            post={post}
+          />
+        ))}
+
+<PostModal
+        modalPost={modalPost}
+        displayModal={displayModal}
+        setDisplayModal={setDisplayModal}
+        comments={comments}
+        />
     </div>
   );
 }
