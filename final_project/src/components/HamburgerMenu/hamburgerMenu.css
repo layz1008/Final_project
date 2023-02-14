@@ -7,11 +7,17 @@
     top: 0;
     left: -100%;
     transition: 950ms;
-    background: #467172;
-  }
+    background: #ffffff;
+}
 
 .ham-menu.active {
     left: 0;
     transition: 350ms;
-  }
+}
 
+.hamburger-subreddits li{
+    padding: 20px 0px;
+    list-style: none;
+    text-decoration: none;
+    
+}
