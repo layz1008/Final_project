@@ -1,11 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-// import { SidebarData } from "../SidebarData/SidebarData.jsx";
+import { getSubs } from "../../services/subs.js"
 import "./hamburgerMenu.css";
 
-function HamburgerMenu({subs, setSubs}) {
+function HamburgerMenu() {
   const [sidebar, setSidebar] = useState(false);
+  const [subs, setSubs] = useState([]);
   const showSidebar = () => setSidebar(!sidebar);
+
+  useEffect(() => {
+    const fetchSubs = async () => {
+      const response = await getSubs();
+      setSubs(response);
+    };
+
+    fetchSubs();
+  }, []); 
 
   return (
     <>
@@ -16,14 +26,12 @@ function HamburgerMenu({subs, setSubs}) {
       </div>
       <div className={sidebar ? "ham-menu active" : "ham-menu"}>
         <ul className="ham-menu-subs" onClick={showSidebar}>
-          <li className="hamburger-toggle">
-            <Link to="#" className="hamburger-menu">
-            </Link>
-          </li>
           <div className="hamburger-subreddits">
-            {/* {subs.filter(sub => sub.post).map(s => (
-                <li key={s.id}>{s.title}</li>
-            ))} */}
+            {subs.map((sub, index) => (
+                <li key={index}>
+                    {sub.title}
+                </li>
+            ))}
           </div>
         </ul>
       </div>
