@@ -51,6 +51,8 @@ export default function Home() {
             setDisplayModal={setDisplayModal}
             setModalPost={setModalPost}
             post={post}
+            modalPost={modalPost}
+            comments = {comments}
           />
         ))}
       </div>
