@@ -1,3 +1,5 @@
+import "./post.css";
+
 function PostModal({modalPost, displayModal, setDisplayModal, comments}) {
     const body = document.querySelector("body");
 
@@ -14,7 +16,7 @@ function PostModal({modalPost, displayModal, setDisplayModal, comments}) {
         <div className={displayModal ? "post-modal" : 'hide-element'}>
             <div className="close-btn-container">
                 <div className="modal-title">{modalPost.title}</div>
-                <img src={modalPost.img_url} />
+                <img className='modal-image' src={modalPost.img_url} />
                 <div className="texts">
                 <div dangerouslySetInnerHTML={{ __html: modalPost.text }} /></div>
                 <div className="sub-count"> {modalPost.sub}</div>
