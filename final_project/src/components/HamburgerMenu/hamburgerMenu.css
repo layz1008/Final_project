@@ -1,0 +1,17 @@
+.ham-menu { 
+    width: 200px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: 950ms;
+    background: #467172;
+  }
+
+.ham-menu.active {
+    left: 0;
+    transition: 350ms;
+  }
+

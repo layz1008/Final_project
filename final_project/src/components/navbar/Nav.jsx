@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./nav.css"
 import SignInModal from "./SignIn.jsx";
+import HamburgerMenu from "../HamburgerMenu/HamburgerMenu.jsx";
+
 
 
 // We will eventually need some functions up here for authentication
 
 // export default function Nav() {
   // class Navbar({search, handleSearch}) extends React.Component {
-export default function Nav({search, handleSearch}) {
+export default function Nav({ search, handleSearch }) {
   // class Navbar extends React.Component{
 
   // const [state, setState] = useState(false)
@@ -25,6 +27,7 @@ export default function Nav({search, handleSearch}) {
     return (
     <div>
       <nav className="navBar">
+        <HamburgerMenu />
         <NavLink className={"navBarInfo Link"} to="/">
           Home
         </NavLink>

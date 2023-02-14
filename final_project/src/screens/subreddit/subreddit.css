@@ -4,6 +4,7 @@
     justify-content: space-around;
     align-content: center;
     background-color: orangered;
+    min-width: 775px;
 }
 
 #user-avatar{
@@ -23,11 +24,16 @@
 }
 
 #subreddit-description{
+    display: flex;
     align-self: center;
+    flex-flow: row wrap;
+    max-width: 200px;
+    margin: 5px;
 }
 
 #filter-div{
-    display:flex
+    display:flex;
+    flex-flow: column;
 }
 
 #post-filter-options{
@@ -48,8 +54,8 @@
     border: solid white;
     border-width: 2px;
     border-radius: 10px;
-    height: 30px;
-    width: 100px;
+    height: 20px;
+    width: 50px;
     font-size: medium;
 }
 #join-button:hover{

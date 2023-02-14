@@ -14,6 +14,7 @@ export default function Home() {
   const [modalPost, setModalPost] = useState({});
   const [displayModal, setDisplayModal] = useState(false);
 
+
   useEffect(() => {
     fetchPosts();
   }, []);
@@ -82,6 +83,8 @@ export default function Home() {
             setDisplayModal={setDisplayModal}
             setModalPost={setModalPost}
             post={post}
+            modalPost={modalPost}
+            comments = {comments}
           />
         ))}
       </div>
