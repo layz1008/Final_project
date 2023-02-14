@@ -1,5 +1,5 @@
 .ham-menu { 
-    width: 200px;
+    width: 250px;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -7,7 +7,16 @@
     top: 0;
     left: -100%;
     transition: 950ms;
-    background: #ffffff;
+    background: linear-gradient(
+        #263d3d,
+        #467172,
+        #9eb5b6
+      );
+}
+
+.ham-menu-subs {
+    margin-right: 2vh;
+    margin-left: -2vh;
 }
 
 .ham-menu.active {
@@ -15,9 +24,22 @@
     transition: 350ms;
 }
 
+#subreddits-header {
+    font-size: 30px;
+    font-weight: bolder;
+    border: solid 1px white;
+}
 .hamburger-subreddits li{
     padding: 20px 0px;
     list-style: none;
-    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    text-align: center;
     
 }
+
+.hamburger-subreddits a{
+    color: white;
+    text-decoration: none;
+}
+

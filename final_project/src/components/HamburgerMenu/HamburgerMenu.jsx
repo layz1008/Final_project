@@ -28,6 +28,7 @@ function HamburgerMenu() {
       <div className={sidebar ? "ham-menu active" : "ham-menu"}>
         <ul className="ham-menu-subs" onClick={showSidebar}>
           <div className="hamburger-subreddits">
+            <li id="subreddits-header">SUBREDDITS</li>
             {subs.map((sub, index) => (
                 <li key={index}>
                     <Link to = {`/subs/${index+1}`}>
