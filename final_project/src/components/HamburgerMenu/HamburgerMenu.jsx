@@ -8,6 +8,8 @@ function HamburgerMenu() {
   const [subs, setSubs] = useState([]);
   const showSidebar = () => setSidebar(!sidebar);
 
+  
+
   useEffect(() => {
     const fetchSubs = async () => {
       const response = await getSubs();
@@ -22,7 +24,7 @@ function HamburgerMenu() {
     <>
       <div className="hamburger">
         <Link to="#" className="hamburger-menu">
-          <button onClick={showSidebar}>Subreddits</button>
+          <button onClick={showSidebar}><span id="menu-logo">≡</span>Subreddits</button>
         </Link>
       </div>
       <div className={sidebar ? "ham-menu active" : "ham-menu"}>
