@@ -1,6 +1,7 @@
 .hamburger button {
     margin-left: 10px;
     padding: 10px;
+    color: white;
 }
 .hamburger-menu {
     text-decoration: none;
