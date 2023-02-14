@@ -6,11 +6,16 @@ import PostModal from "../../components/posts/PostModal";
 import { getPosts } from "../../services/posts.js";
 import { getComments } from "../../services/comments.js";
 
+import { getSubs } from "../../services/subs.js"
+
+
 export default function Home() {
   const [posts, setPosts] = useState([]);
   const [comments, setComments] = useState([]);
   const [modalPost, setModalPost] = useState({});
   const [displayModal, setDisplayModal] = useState(false);
+
+  const [subs, setSubs] = useState([]);
 
   useEffect(() => {
     fetchPosts();
@@ -28,6 +33,15 @@ export default function Home() {
     };
 
     fetchComment();
+  }, []); 
+
+  useEffect(() => {
+    const fetchSubs = async () => {
+      const response = await getSubs();
+      setSubs(response);
+    };
+
+    fetchSubs();
   }, []); 
 
   return (
