@@ -4,7 +4,7 @@ import Post from "../../components/posts/Post";
 import PostModal from "../../components/posts/PostModal";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getPosts } from "../../services/posts";
+import { getPosts, getPost } from "../../services/posts";
 import { getComments } from "../../services/comments";
 import { getSubs, getSub } from "../../services/subs";
 import { useParams } from "react-router-dom";
@@ -18,27 +18,44 @@ export default function Subreddit() {
   const [subTitle, setSubTitle] = useState([]);
   const [subDescription, setSubDescription] = useState([]);
   const [creator, setCreator] = useState([]);
-  let i = useParams();
+  let {id} = useParams();
 
   async function fetchSub(){
     
-    const res = await getSub(i.id)
+    const res = await getSub(id)
     const ids = res
     setSubTitle(ids.title)
     setCreator(ids.creator)
     setSubDescription(ids.description)
-    console.log(ids)
+    // console.log(ids)
   }
   fetchSub()
 
   useEffect(() => {
     fetchPosts();
-  }, []);
+  }, [id]);
 
   async function fetchPosts() {
     const allPosts = await getPosts();
-    setPosts(allPosts);
-  }
+    const subID = allPosts[id].sub
+    // console.log(`sub id: ${subID}`)
+    // console.log(`post subid: ${allPosts[id].sub}`)
+    // console.log(`posts: ${allPosts}`)
+
+    setPosts(allPosts.filter(post => {
+      // console.log(post)
+      console.log(id)
+      return post.sub == id
+    }));
+
+
+    console.log(posts)
+  //   fetchPost()
+  // async function fetchPosts() {
+  //   const allPosts = await getPosts();
+  //   setPosts(allPosts.filter(post => id === post.sub.id));
+  // }
+}
 
   useEffect(() => {
     const fetchComment = async () => {
