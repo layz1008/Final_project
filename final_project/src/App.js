@@ -26,7 +26,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/create" element={<CreatePost />} />
-        <Route path="/readmex2" element={<Subreddit/>} />
+        <Route path="/subs/:id" element={<Subreddit/>} />
         <Route path="/signup" element={<SignUp />} />
       </Routes>
     </div>
