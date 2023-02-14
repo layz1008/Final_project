@@ -6,13 +6,30 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getPosts } from "../../services/posts";
 import { getComments } from "../../services/comments";
+import { getSubs, getSub } from "../../services/subs";
+import { useParams } from "react-router-dom";
 
 
-export default function Subreddit(post) {
+export default function Subreddit() {
   const [posts, setPosts] = useState([]);
   const [modalPost, setModalPost] = useState({});
   const [displayModal, setDisplayModal] = useState(false);
   const [comments, setComments] = useState([]);
+  const [subTitle, setSubTitle] = useState([]);
+  const [subDescription, setSubDescription] = useState([]);
+  const [creator, setCreator] = useState([]);
+  let i = useParams();
+
+  async function fetchSub(){
+    
+    const res = await getSub(i.id)
+    const ids = res
+    setSubTitle(ids.title)
+    setCreator(ids.creator)
+    setSubDescription(ids.description)
+    console.log(ids)
+  }
+  fetchSub()
 
   useEffect(() => {
     fetchPosts();
@@ -43,13 +60,13 @@ export default function Subreddit(post) {
       <div id ='subredditHeader'>
         <img id ='user-avatar' src="https://icon-library.com/images/generic-user-icon/generic-user-icon-10.jpg" alt='user avatar'></img>
         <div id = 'title-subLink-join'>
-          <h1 id ='sub-title'>Cool Fish</h1>
-          <Link to ='/readmex2' id = 'sub-link'>r/coolfish</Link>
+          <h1 id ='sub-title'>{subTitle}</h1>
+          <Link to ='/readmex2' id = 'sub-link'>r/{subTitle}</Link>
         </div>
         {/* onClick, add subredditId to user list of subreddit id's. if it exists within the user library then button should read "Joined" if clicked in this state button should remove subreddit id from the user library and read "Join".*/}
         <button id = "join-button">Join</button>
         {/* requiest the subreddit description from the subs table */}
-        <p id ='subreddit-description'>A really cool subreddit of really cool fishies</p>
+        <p id ='subreddit-description'>{subDescription}</p>
         {/* contains functions for filtering for: chronological order, highest upvotes, and highest upvotes in a 24h time frame. picking any of the list items will change the state of the page.*/}
         <div id = 'filter-div'>
           <label for ='post-filters'className = 'drop-down-menu' id ='subreddit-banner-dropdown-menu-label'>Post Filters:  </label>
