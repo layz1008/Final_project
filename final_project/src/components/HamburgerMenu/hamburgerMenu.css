@@ -39,7 +39,7 @@
 #subreddits-header {
     font-size: 30px;
     font-weight: bolder;
-    border: solid 1px white;
+    border: solid 1px #1DC9A0;
 }
 .hamburger-subreddits li{
     padding: 20px 0px;
