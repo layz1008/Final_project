@@ -44,27 +44,6 @@ export default function Home() {
 
   return (
     <div className="home-page-main-container">
-      <div className="news-feed-scroll">
-        {articles.map((article) => (
-          <div
-            key={article.source.id}
-            className="news-feed-container"
-            style={{
-              backgroundImage: `url("${article.urlToImage}")`,
-            }}
-          >
-            <a className="news-anchor" href={article.url} target="blank" rel="noreferrer noopener">
-              <div className="news-feed-sub-container">
-                <h2 className="news-feed-title">
-                  {article.title.length > 40
-                    ? article.title.slice(0, 40) + "..."
-                    : article.title}
-                </h2>
-              </div>
-            </a>
-          </div>
-        ))}
-      </div>
       <div className="home-page-filter-container">
         <p className="filter-text"> Filter By:</p>
         <ul className="filter-button">
@@ -94,6 +73,29 @@ export default function Home() {
         setDisplayModal={setDisplayModal}
         comments={comments}
       />
+            <footer>
+      <div className="news-feed-scroll">
+        {articles.map((article) => (
+          <div
+            key={article.source.id}
+            className="news-feed-container"
+            style={{
+              backgroundImage: `url("${article.urlToImage}")`,
+            }}
+          >
+            <a className="news-anchor" href={article.url} target="blank" rel="noreferrer noopener">
+              <div className="news-feed-sub-container">
+                <h2 className="news-feed-title">
+                  {article.title.length > 40
+                    ? article.title.slice(0, 40) + "..."
+                    : article.title}
+                </h2>
+              </div>
+            </a>
+          </div>
+        ))}
+      </div>
+      </footer>
     </div>
   );
 }
