@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Route, useLocation } from "react-router-dom";
 import "./nav.css"
 import SignInModal from "./SignIn.jsx";
 import HamburgerMenu from "../HamburgerMenu/HamburgerMenu.jsx";
@@ -11,6 +11,8 @@ import HamburgerMenu from "../HamburgerMenu/HamburgerMenu.jsx";
 // export default function Nav() {
   // class Navbar({search, handleSearch}) extends React.Component {
 export default function Nav({ search, handleSearch }) {
+  const location = useLocation().pathname
+  console.log(location)
   // class Navbar extends React.Component{
 
   // const [state, setState] = useState(false)
@@ -38,9 +40,11 @@ export default function Nav({ search, handleSearch }) {
           onChange={handleSearch}
         />
         </div>
+        {location == "/subs/1" ?
         <NavLink className={"navBarInfo Link"} to="/create">
           Create Post 
         </NavLink>
+        : null}
         <NavLink className={"navBarInfo"} id="navbar-buttons" to="/signup">
           Sign-Up
         </NavLink>

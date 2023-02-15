@@ -1,13 +1,11 @@
-import React from "react";
+import {React, useEffect, useState} from "react";
 import "./subreddit.css";
 import Post from "../../components/posts/Post";
 import PostModal from "../../components/posts/PostModal";
-import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { Link, useParams, useLocation, Route } from "react-router-dom";
 import { getPosts, getPost } from "../../services/posts";
 import { getComments } from "../../services/comments";
 import { getSubs, getSub } from "../../services/subs";
-import { useParams } from "react-router-dom";
 
 
 export default function Subreddit() {
@@ -18,7 +16,25 @@ export default function Subreddit() {
   const [subTitle, setSubTitle] = useState([]);
   const [subDescription, setSubDescription] = useState([]);
   const [creator, setCreator] = useState([]);
+  const [join, setJoin] = useState([])
   let {id} = useParams();
+  const subPath = useLocation();
+  
+  function inSub(){
+    
+  }
+
+  async function joinSubreddit(){
+    const findFollowers = await getSub(id)
+    console.log(findFollowers.followers)
+    if('userID is included in follower list'){
+      return <button id = "join-button">Joined</button>
+      // update followers array(subs) to include useID
+    } else {
+      // update followers array(subs) to remove userID
+      return <button id = "join-button">Join</button>}
+    }
+  joinSubreddit()
 
   async function fetchSub(){
     
@@ -29,10 +45,11 @@ export default function Subreddit() {
     setSubDescription(ids.description)
     // console.log(ids)
   }
-  fetchSub()
+  
 
   useEffect(() => {
     fetchPosts();
+    fetchSub();
   }, [id]);
 
   async function fetchPosts() {
@@ -44,12 +61,12 @@ export default function Subreddit() {
 
     setPosts(allPosts.filter(post => {
       // console.log(post)
-      console.log(id)
+      // console.log(id)
       return post.sub == id
     }));
 
 
-    console.log(posts)
+    // console.log(posts)
   //   fetchPost()
   // async function fetchPosts() {
   //   const allPosts = await getPosts();
@@ -78,7 +95,7 @@ export default function Subreddit() {
         <img id ='user-avatar' src="https://icon-library.com/images/generic-user-icon/generic-user-icon-10.jpg" alt='user avatar'></img>
         <div id = 'title-subLink-join'>
           <h1 id ='sub-title'>{subTitle}</h1>
-          <Link to ='/readmex2' id = 'sub-link'>r/{subTitle}</Link>
+          <Link to ='/subs/:id' id = 'sub-link'>r/{subTitle}</Link>
         </div>
         {/* onClick, add subredditId to user list of subreddit id's. if it exists within the user library then button should read "Joined" if clicked in this state button should remove subreddit id from the user library and read "Join".*/}
         <button id = "join-button">Join</button>
