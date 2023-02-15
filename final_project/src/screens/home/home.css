@@ -10,13 +10,14 @@
     justify-content: center;
     margin-bottom: 20px;
     background-color: #F2F2F2;
-    padding: 10px;
+    padding: 5px;
     border-radius: 5px;
   }
   
   .filter-text {
     font-weight: bold;
     margin-right: 10px;
+    vertical-align:middle;
   }
   
   .filter-button {
@@ -50,7 +51,6 @@
   
   .post {
     width: 300px;
-    /* width: 10px; */
     height: 400px;
     margin: 20px;
     border: 1px solid gray;
@@ -78,30 +78,29 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
-  footer {
-    position: fixed;
-    bottom: 0;
-
-  }
-
   .news-feed-scroll {
     display: flex;
     column-gap: 10px;
     width: 100vw;
     overflow-x: auto;
     overflow-y: hidden;
+    margin-top: 82px;
   }
-  
+
+  .news-feed-scroll::-webkit-scrollbar{
+    display: none;
+  }
+
   .news-feed-container {
-    height: 150px;
-    width: 150px;
+    height: 110px;
+    width: 110px;
     background-size: cover;
     border-radius: 10px;
   }
 
   .news-feed-sub-container {
-    height: 150px;
-    width: 150px;
+    height: 110px;
+    width: 110px;
     background: linear-gradient( rgba(0,0,0,0.2), rgba(0,0,0,0.3), rgba(0,0,0,0.4), rgba(0,0,0,0.6), rgba(0,0,0,0.8), #000000);
     border-radius: 10px;
     display: flex;
@@ -119,3 +118,6 @@
   .news-anchor {
     text-decoration: none;
   }
+
+  
+  

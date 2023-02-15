@@ -5,6 +5,8 @@
     height: 80px;
     background-color: #467172;
     padding: 5 20px;
+    position: fixed;
+    width: 100%;
   }
 
 @media screen and (max-width: 400px) {
