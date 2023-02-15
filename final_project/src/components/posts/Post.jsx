@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { getComments, getComment } from "../../services/comments";
 import { getPost, getPosts } from "../../services/posts";
 
-export default function Post({ post, setModalPost, setDisplayModal, modalPost, comments, }) {
+export default function Post({ key, post, setModalPost, setDisplayModal, modalPost, comments, }) {
   function handleClick() {
     console.log("Modal was clicked");
     setModalPost(post);
@@ -13,7 +13,7 @@ export default function Post({ post, setModalPost, setDisplayModal, modalPost, c
   }
 
   return (
-    <div onClick={handleClick} className="post-card">
+    <div key = {key} onClick={handleClick} className="post-card">
       <h2>{post.title} </h2>
       <img src={`${post.img_url}`} alt={`${post.id}`} />
       <div id="votes-div">
