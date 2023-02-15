@@ -84,14 +84,21 @@
 }
 
 .modal-image {
-  max-width: 300px;
-  max-height: 300px;
-  margin-top: 20px;
+  max-width: 800px;
+  max-height: 800px;
+  margin-top: 30px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .texts {
   margin-top: 20px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .sub-count, .votes-container {
