@@ -1,8 +1,18 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./post.css";
 
 function PostModal({modalPost, displayModal, setDisplayModal, comments}) {
     const body = document.querySelector("body");
+    const [upVotes, setUpVotes] = useState(modalPost.up_votes);
+    const [downVotes, setDownVotes] = useState(modalPost.down_votes);
+
+    const handleUpVote = () => {
+        setUpVotes(upVotes + 1);
+    };
+
+    const handleDownVote = () => {
+        setDownVotes(downVotes + 1);
+    };
 
     const handleClose = () => {
         setDisplayModal(false);
@@ -21,8 +31,12 @@ function PostModal({modalPost, displayModal, setDisplayModal, comments}) {
                 <div className="texts">
                 <div dangerouslySetInnerHTML={{ __html: modalPost.text }} /></div>
                 <div className="sub-count"> {modalPost.sub}</div>
-                <div className="votes"> {modalPost.up_votes}</div>
-                <div className="votes2"> {modalPost.down_votes}</div>
+                <div className="votes-container">
+                <div className="votes"> {upVotes}</div>
+                    <button className="upvote-button" onClick={handleUpVote}>Up Vote</button>
+                    <div className="votes2"> {downVotes}</div>
+                    <button className="downvote-button" onClick={handleDownVote}>Down Vote</button>
+                </div>
                 <div className="comments">
                     {comments.filter(comment => comment.post == modalPost.id).map(comment => (
                         <p key={comment.id}>{comment.comment}</p>
