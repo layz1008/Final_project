@@ -13,15 +13,22 @@ export default function Home() {
   const [articles, setArticles] = useState([]);
   const [modalPost, setModalPost] = useState({});
   const [displayModal, setDisplayModal] = useState(false);
-
+  const [sortPost, setSortPost] = useState('');
 
   useEffect(() => {
     fetchPosts();
-  }, []);
+  }, [sortPost]);
 
   async function fetchPosts() {
     const allPosts = await getPosts();
-    setPosts(allPosts);
+    if (sortPost==="likes") {
+      setPosts(allPosts.sort((a, b) => b.up_votes - a.up_votes));
+    } else if(sortPost==="dislikes"){
+      setPosts(allPosts.sort((a, b) => b.down_votes - a.down_votes));
+    }
+    else {
+      setPosts(allPosts);
+    }
   }
 
   useEffect(() => {
@@ -42,6 +49,12 @@ export default function Home() {
     newsAPI();
   }, []);
 
+  function sort() {
+    setSortPost("likes");
+  }
+  function dislikes(){
+    setSortPost("dislikes")
+    }
   return (
     <div className="home-page-main-container">
       <div className="news-feed-scroll">
@@ -53,7 +66,12 @@ export default function Home() {
               backgroundImage: `url("${article.urlToImage}")`,
             }}
           >
-            <a className="news-anchor" href={article.url} target="blank" rel="noreferrer noopener">
+            <a
+              className="news-anchor"
+              href={article.url}
+              target="blank"
+              rel="noreferrer noopener"
+            >
               <div className="news-feed-sub-container">
                 <h2 className="news-feed-title">
                   {article.title.length > 40
@@ -67,13 +85,17 @@ export default function Home() {
       </div>
       <div className="home-page-filter-container">
         <p className="filter-text"> Filter By:</p>
-        <ul className="filter-button">
+        <div>
+          <button onClick={sort}> Likes 👍  </button>
+          <button onClick={dislikes}> Not likes 👎 </button>
+        </div>
+        {/* <ul className="filter-button">
           <select className="filter-dropdown">
             <option value="mostUpVotes">Most Up Votes 👍</option>
             <option value="mostDownVotes">Most Down Votes 👎</option>
-            <option value="trending">Trending 🔥</option>
+            <option value="trending"></option>
           </select>
-        </ul>
+        </ul> */}
       </div>
       <div className="user-assets-container">{/* <UserAssets /> */}</div>
       <div className="home-page-post-container">
@@ -84,7 +106,7 @@ export default function Home() {
             setModalPost={setModalPost}
             post={post}
             modalPost={modalPost}
-            comments = {comments}
+            comments={comments}
           />
         ))}
       </div>
