@@ -21,26 +21,18 @@ export default function Nav({ search, handleSearch }) {
         <NavLink className={"navBarInfo"} to="/">
           Home
         </NavLink>
-
-        <NavLink className={"navBarInfo"} to="/create">
+        <NavLink className={"navBarInfo Link"} to="/create">
           Create Post
-        </NavLink>
-        <NavLink className={"navBarInfo"} id="navbar-buttons" to="/signup">
-          Sign Up
         </NavLink>
         {isUserLoggedIn() ? 
           <NavLink onClick={logout} className={"navBarInfo"} id="navbar-log" to="/">Logout</NavLink>
           :
-
-          <NavLink className={"navBarInfo"} id="navbar-log" to="/login">Login</NavLink>
-
           <div>
           <NavLink className={"navBarInfo"} id="navbar-buttons" to="/login">Login</NavLink>
           <NavLink className={"navBarInfo"} id="navbar-buttons" to="/signup">
           Sign-Up
         </NavLink>
         </div>
-
         }
       </nav>
     </div>
