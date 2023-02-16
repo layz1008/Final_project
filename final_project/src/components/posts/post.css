@@ -1,7 +1,6 @@
 .post-card {
   display: flex;
   flex-direction: column;
-  /* box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px; */
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
     rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
@@ -14,9 +13,10 @@
 
 @media screen and (max-width: 400px) {
   .post-card {
-    width: 100vw;
-    height: 100vw;
-    top: 5%;
+    width: 90vw;
+    height: 80vw;
+    top: 10%;
+    
   }  
 }
 
@@ -49,130 +49,5 @@
   display: none;
 }
 
-.post-modal {
-  color: white;
-  z-index: 1;
-  border-radius: 25px;
-  background: linear-gradient(45deg, #396662, #305653);
-  padding: 1px 20px;
-  position: fixed;
-  width: 80vw;
-  height: 90vw;
-  top: 3%;
-  left: 50%;
-  transform: translate(-50%);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  border: solid 1px #ffffff;
-}
 
-@media screen and (max-width: 400px) {
-  .post-modal {
-    width: 100vw;
-    height: 250vw;
-    top: 5%;
-  }
-}
 
-.modal-title {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 4rem;
-  font-weight: bolder;
-}
-
-.modal-image {
-  max-width: 500px;
-  max-height: 500px;
-  margin-top: 30px;
-  margin-left: 110px;
-  display: flex;
-  justify-content: center;
-}
-
-.texts {
-  margin-top: 20px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.sub-count, .votes-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.votes {
-  margin-right: 5px;
-}
-
-.upvote-button {
-  background-color: green;
-  color: white;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  margin-right: 5px;
-  cursor: pointer;
-}
-
-.downvote-button {
-  background-color: red;
-  color: white;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  margin-right: 5px;
-  cursor: pointer;
-}
-
-.votes2 {
-  margin-right: 5px;
-}
-
-.comments {
-  margin-top: 20px;
-  width: 100%;
-}
-
-.comments-container {
-  margin-top: 20px;
-  height: 200px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.comments-scrollable {
-  height: 80%;
-  overflow-y: scroll;
-  padding: 10px;
-  margin-right: -10px;
-}
-
-.comments-scrollable::-webkit-scrollbar {
-  width: 8px; /* set the width of the scroll bar */
-}
-
-.comments-scrollable::-webkit-scrollbar-track {
-  background: #f1f1f1; /* set the background color of the scroll bar track */
-}
-
-.comments-scrollable::-webkit-scrollbar-thumb {
-  background: #888; /* set the color of the scroll bar thumb */
-}
-
-.close-post-modal {
-  display: block;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  width: 25px;
-  height: 40px;
-}

@@ -1,0 +1,161 @@
+.post-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hide-element {
+    display: none;
+  }
+  
+  .close-btn-container {
+    background-color: #467172;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 700px;
+    max-height: 80%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .modal-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .texts {
+    margin-bottom: 20px;
+  }
+  
+  .votes-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  #votes-div {
+    display: flex;
+    align-items: center;
+  }
+  
+  .votes {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .votes2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 10px;
+    color: red;
+  }
+  
+  .upvote-button,
+  .downvote-button {
+    background-color: transparent;
+    border: none;
+    color: gray;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .upvote-button:hover,
+  .downvote-button:hover {
+    color: black;
+  }
+  
+  ..comments-container {
+    border-top: 1px solid lightgray;
+    margin-top: 20px;
+    padding-top: 20px;
+    background-color: #9D9393;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+  }
+  
+  
+  .comments-scrollable {
+    max-height: 200px;
+    overflow: auto;
+  }
+  
+  .comment-box {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    
+  }
+  
+  .comment-box textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    resize: vertical;
+    min-height: 80px;
+  }
+  
+  .comment-box button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .comment-box button:hover {
+    background-color: #555;
+  }
+  
+  .close-post-modal {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    width: 25px;
+    height: 40px;
+  } 
+  
+  .comment {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #1E97DC;
+    border-radius: 40px;
+    border: 1px solid #ccc; 
+    
+    
+  }
+
+
+  .comments-title {
+    
+    top: 0;
+    right: 0;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 10px;
+  }
+  
+  
