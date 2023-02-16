@@ -1,29 +1,19 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useContext } from 'react';
+import { NavLink, useLocation, useParams, Route } from "react-router-dom";
 import "./nav.css"
-import SignInModal from "./SignIn.jsx";
 import HamburgerMenu from "../HamburgerMenu/HamburgerMenu.jsx";
+import { logoutUser } from '../../services/auth.js';
+import { UserContext } from '../../contexts/userContext.js';
 
 
-
-// We will eventually need some functions up here for authentication
-
-// export default function Nav() {
-  // class Navbar({search, handleSearch}) extends React.Component {
 export default function Nav({ search, handleSearch }) {
-  // class Navbar extends React.Component{
 
-  // const [state, setState] = useState(false)
-  // const state = {modalOpen:false}
-
-  // const handleModalOpen = () => {
-  //   setState((prevState) => {
-  //      return{
-  //         modalOpen: !prevState.modalOpen
-  //      }})
-  //   }
-
-  // const handleSignIn = (username, password) => {}
+  const {user, setUser, isUserLoggedIn} = useContext(UserContext)
+  const logout = (event) => {
+    event.preventDefault();
+    logoutUser();
+    setUser(null);
+  }
     return (
     <div>
       <nav className="navBar">
@@ -38,25 +28,23 @@ export default function Nav({ search, handleSearch }) {
           onChange={handleSearch}
         />
         </div>
+        {location == "/subs/1" || location == "/subs/2" || location == "/subs/3" || location == "/subs/4"  ?
         <NavLink className={"navBarInfo Link"} to="/create">
-          Create Post 
+          Create Post
         </NavLink>
-        <NavLink className={"navBarInfo"} id="navbar-buttons" to="/signup">
+        : null}
+        
+        {isUserLoggedIn() ? 
+          <NavLink onClick={logout} className={"navBarInfo"} id="navbar-buttons" to="/">Logout</NavLink>
+          :
+          <div>
+          <NavLink className={"navBarInfo"} id="navbar-buttons" to="/login">Login</NavLink>
+          <NavLink className={"navBarInfo"} id="navbar-buttons" to="/signup">
           Sign-Up
         </NavLink>
-
-      {/* <p onClick={this.handleModalOpen} className={"navBarInfo"} id="navbar-buttons" >
-            Sign-In
-          </p> */}
-        </nav>
-        {/* <SignInModal
-              modalOpen={state.modalOpen}
-              handleModalOpen={handleModalOpen}
-              handleSignIn={handleSignIn}
-           /> */}
+        </div>
+        }
+      </nav>
     </div>
-  )
+  );
 }
-
-
-
