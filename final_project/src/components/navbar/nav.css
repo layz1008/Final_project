@@ -24,31 +24,50 @@
   }
 }
 
-#navbar-buttons {
+#navbar-buttons, #navbar-log {
   padding: 17px 30px;
   border-radius: 50px;
   border: 0;
   background-color: white;
   box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   font-size: 15px;
   transition: all .5s ease;
   color: black;
+}
+#navbar-log {
   margin-right: 10px;
+  margin-left: -400px;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 390px) {
   .navBarInfo{
     font-size: 15px;
-    padding-left: 0px;
+    padding-right: 5px;
   }
   #navbar-buttons {
-    padding: 8px 14px;
+    padding: 1px 10px;
+    font-size: 12px;
+    text-align: center;
+    margin-right: 0px;
+    margin-left: 0px;
+    height: 29px;
+    
+  }
+  #navbar-log{
+    padding: 1px 7px;
+    font-size: 12px;
+    text-align: center;
+    margin-right: 5px;
+    margin-left: 5px;
+    height: 29px;
+    display: flex;
+    align-items: center;
   }
 }
 
-#navbar-buttons:hover {
+#navbar-buttons:hover, #navbar-log:hover {
   background-color: #1DC9A0;
   cursor: pointer;
   letter-spacing: 3px;

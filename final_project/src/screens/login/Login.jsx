@@ -4,6 +4,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { UserContext } from '../../contexts/userContext.js'
 import { loginUser, logoutUser } from '../../services/auth.js'
 
+import './login.css'
+
 function useQueryParams () {
   return new URLSearchParams(useLocation().search);
 }
@@ -58,13 +60,14 @@ export default function Login() {
   return (
   <div className="login-wrapper">
 
-    <h1>Log into your account</h1>
+    <h1>LOGIN</h1>
       <form onSubmit={onLoginFormSubmit} method="POST">
         <group controlId="username">
           <label>
-            <p>Username</p>
+            {/* <p>Username</p> */}
             <input 
               onChange={(event)=>{setUsername(event.target.value)}}
+              placeholder="USERNAME"
               type="text"
               name="username"/>
           </label>
@@ -72,17 +75,17 @@ export default function Login() {
         <br/>
         <group controlId="password">
           <label>
-            <p>Password</p>
+            {/* <p>Password</p> */}
             <input 
               onChange={(event)=>{setPassword(event.target.value)}}
+              placeholder="PASSWORD"
               type="text"
               name="password"/>
           </label>
         </group>
         <button type="submit">Login</button>
-        <p style={{color: 'red'}}>{errorDisplay}</p>
+        <p id="error-message">{errorDisplay}</p>
       </form>
-
   </div>
   )
 }

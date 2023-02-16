@@ -108,7 +108,7 @@ export default function SignUp() {
         <button
           id="submit-password"
           type="submit" 
-          value="submit">Submit
+          value="submit">Sign Up
         </button>
         <>{result(user.valid)}</>
       </form>

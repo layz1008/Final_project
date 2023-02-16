@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { getComments, getComment } from "../../services/comments.js";
 import { getPost, getPosts } from "../../services/posts";
 
-export default function Post({ key, post, setModalPost, setDisplayModal, modalPost, comments, }) {
+export default function Post({ key, post, setModalPost, setDisplayModal, modalPost, comments }) {
   function handleClick() {
     console.log("Modal was clicked");
     setModalPost(post);

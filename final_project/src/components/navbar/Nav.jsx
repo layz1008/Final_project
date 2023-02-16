@@ -18,19 +18,19 @@ export default function Nav({ search, handleSearch }) {
     <div>
       <nav className="navBar">
         <HamburgerMenu />
-        <NavLink className={"navBarInfo Link"} to="/">
+        <NavLink className={"navBarInfo"} to="/">
           Home
         </NavLink>
-        <NavLink className={"navBarInfo Link"} to="/create">
+        <NavLink className={"navBarInfo"} to="/create">
           Create Post
         </NavLink>
         <NavLink className={"navBarInfo"} id="navbar-buttons" to="/signup">
-          Sign-Up
+          Sign Up
         </NavLink>
         {isUserLoggedIn() ? 
-          <NavLink onClick={logout} className={"navBarInfo"} id="navbar-buttons" to="/">Logout</NavLink>
+          <NavLink onClick={logout} className={"navBarInfo"} id="navbar-log" to="/">Logout</NavLink>
           :
-          <NavLink className={"navBarInfo"} id="navbar-buttons" to="/login">Login</NavLink>
+          <NavLink className={"navBarInfo"} id="navbar-log" to="/login">Login</NavLink>
         }
       </nav>
     </div>
