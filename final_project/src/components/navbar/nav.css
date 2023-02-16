@@ -21,7 +21,6 @@
   .navBar {
     width: 390px;
     justify-content: center;
-
   }
 }
 
@@ -45,7 +44,7 @@
     padding-left: 0px;
   }
   #navbar-buttons {
-
+    padding: 8px 14px;
   }
 }
 

@@ -20,7 +20,22 @@ body {
     background: #467172;
     box-shadow: inset -35px -35px 68px #467172,
                 inset 35px 35px 68px #467172;
-                
+  }
+
+  @media screen and (max-width: 390px){
+    .create-post {
+      width: 280px;
+    }
+    .create-post h2 {
+      color: white;
+    }
+    .inputbox {
+      margin-top: 10px;
+    }
+     label {
+      color: white;
+    }
+    
   }
   
   .create-post h2 {

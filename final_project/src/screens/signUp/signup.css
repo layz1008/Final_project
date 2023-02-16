@@ -17,6 +17,11 @@
     height: 430px;
 }
 
+@media screen and (max-width: 390px) {
+    .form {
+        margin-top: 150px;
+    }
+}
 .sign-up-heading {
     color: white;
 }

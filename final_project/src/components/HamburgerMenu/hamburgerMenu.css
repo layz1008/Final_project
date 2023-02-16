@@ -28,7 +28,7 @@
 
 @media screen and (max-width: 390px) {
     .ham-menu {
-        width: 200px;
+        width: 140px;
     }
 }
 
@@ -50,9 +50,14 @@
 
 @media screen and (max-width: 390px) {
     #subreddits-header {
-        font-size: 20px;
+        font-size: 17px;
         font-weight: bolder;
+        padding: 15px 8px;
         border: solid 1px #1DC9A0;
+    }
+    .ham-menu-subs {
+        margin-right: 1vh;
+        margin-left: -4vh;
     }
 }
 .hamburger-subreddits li{
@@ -71,7 +76,6 @@
 
 @media screen and (max-width: 390px) {
     .hamburger-subreddits a{
-        font-size: 20px;
-        font-weight: bolder;
+        font-size: 17px;
     }
 }
