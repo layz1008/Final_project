@@ -4,7 +4,7 @@ import { updatePost } from "../../services/posts";
 import CommentBox from "./CommentBox";
 import { UserContext } from "../../contexts/userContext";
 
-function PostModal({ modalPost, displayModal, setDisplayModal, comments }) {
+function PostModal({ modalPost, displayModal, setDisplayModal, comments, refresh, setRefresh }) {
   const body = document.querySelector("body");
 
   const handleClose = () => {
@@ -47,6 +47,7 @@ function PostModal({ modalPost, displayModal, setDisplayModal, comments }) {
   const handleAddComment = async (newComment) => {
     try {
       const response = await addComment(newComment);
+
       console.log(response);
     } catch (error) {
       console.log(error);
@@ -105,7 +106,7 @@ function PostModal({ modalPost, displayModal, setDisplayModal, comments }) {
               ))}
           </div>
         </div>
-        <CommentBox postId={modalPost.id} addComment={handleAddComment} />
+        <CommentBox refresh={refresh} setRefresh={setRefresh} postId={modalPost.id} addComment={handleAddComment} />
         <svg className="close-post-modal" onClick={handleClose}>
           <line
             x1="6"
