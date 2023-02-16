@@ -21,7 +21,7 @@ function App() {
     <div className="App">
       <UserContext.Provider value={{user, setUser, isUserLoggedIn}}>
         <Router>
-          <nav>
+          <nav> 
             <Nav />
             {/* <Nav handleSearch={handleSearch}/> */}
           </nav>

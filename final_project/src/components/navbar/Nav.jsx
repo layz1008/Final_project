@@ -7,10 +7,6 @@ import { UserContext } from '../../contexts/userContext.js';
 
 
 export default function Nav({ search, handleSearch }) {
-  const location = useLocation().pathname
-  const param = useParams();
-  console.log(param)
-  // class Navbar extends React.Component{
 
   const {user, setUser, isUserLoggedIn} = useContext(UserContext)
   const logout = (event) => {
@@ -34,7 +30,7 @@ export default function Nav({ search, handleSearch }) {
         </div>
         {location == "/subs/1" || location == "/subs/2" || location == "/subs/3" || location == "/subs/4"  ?
         <NavLink className={"navBarInfo Link"} to="/create">
-          Create Post 
+          Create Post
         </NavLink>
         : null}
         
@@ -50,8 +46,5 @@ export default function Nav({ search, handleSearch }) {
         }
       </nav>
     </div>
-  )
+  );
 }
-
-
-
