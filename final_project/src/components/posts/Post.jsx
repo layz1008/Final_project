@@ -14,7 +14,7 @@ export default function Post({ key, post, setModalPost, setDisplayModal, modalPo
 
   return (
     <div key = {key} onClick={handleClick} className="post-card">
-      <h2>{post.title} </h2>
+      <h2 id="title">{post.title} </h2>
       <img src={`${post.img_url}`} alt={`${post.id}`} />
       <div id="votes-div">
         <span className="votes" id="upVotes">

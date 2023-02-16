@@ -14,8 +14,6 @@ code {
 
 @media screen and (max-width: 400px) {
   .App {
-    width: 150vw;
-    height: 350vw;
-    top: 5%;
+    width: 390px;
   }    
 }

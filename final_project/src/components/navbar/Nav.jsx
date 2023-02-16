@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { NavLink } from "react-router-dom";
-import "./nav.css"
+import "./nav.css";
 import HamburgerMenu from "../HamburgerMenu/HamburgerMenu.jsx";
 import { logoutUser } from '../../services/auth.js';
 import { UserContext } from '../../contexts/userContext.js';
@@ -21,15 +21,8 @@ export default function Nav({ search, handleSearch }) {
         <NavLink className={"navBarInfo Link"} to="/">
           Home
         </NavLink>
-        <div className="search">
-        <input
-          type="text"
-          className="nav-searchInput"
-          onChange={handleSearch}
-        />
-        </div>
         <NavLink className={"navBarInfo Link"} to="/create">
-          Create Post 
+          Create Post
         </NavLink>
         <NavLink className={"navBarInfo"} id="navbar-buttons" to="/signup">
           Sign-Up
@@ -41,8 +34,5 @@ export default function Nav({ search, handleSearch }) {
         }
       </nav>
     </div>
-  )
+  );
 }
-
-
-
