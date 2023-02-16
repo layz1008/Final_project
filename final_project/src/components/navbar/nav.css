@@ -7,15 +7,8 @@
     padding: 5 20px;
     position: fixed;
     width: 100%;
+    z-index: 1;
   }
-
-@media screen and (max-width: 400px) {
-  /* .post-modal {
-    width: 100vw;
-    height: 250vw;
-    top: 5%;
-  }   */
-}
 
 .navBarInfo {
   color: #fff;
@@ -24,8 +17,16 @@
   margin-left: 1.5rem;
 }
 
+@media screen and (max-width: 400px) {
+  .navBar {
+    width: 390px;
+    justify-content: center;
+
+  }
+}
+
 #navbar-buttons {
-  padding: 17px 40px;
+  padding: 17px 30px;
   border-radius: 50px;
   border: 0;
   background-color: white;
@@ -35,6 +36,17 @@
   font-size: 15px;
   transition: all .5s ease;
   color: black;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 400px) {
+  .navBarInfo{
+    font-size: 15px;
+    padding-left: 0px;
+  }
+  #navbar-buttons {
+
+  }
 }
 
 #navbar-buttons:hover {

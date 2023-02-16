@@ -20,6 +20,9 @@
   }  
 }
 
+#title {
+  text-align: center;
+}
 .post-card img {
   width: 100%;
   height: 315px;
