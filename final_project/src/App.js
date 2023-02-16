@@ -7,10 +7,11 @@ import { Routes, Route } from "react-router-dom";
 import Login from "./screens/login/Login.jsx";
 import {BrowserRouter as Router} from "react-router-dom"
 import { UserContext } from "./contexts/userContext.js";
-import React, { useState } from "react";
+import { useState } from "react";
 
 
 function App() {
+  const [show, setShow] = useState(null)
   const [user, setUser] = useState(null);
   const isUserLoggedIn = () => {
     return !!user;
@@ -20,7 +21,7 @@ function App() {
     <div className="App">
       <UserContext.Provider value={{user, setUser, isUserLoggedIn}}>
         <Router>
-          <nav>
+          <nav> 
             <Nav />
             {/* <Nav handleSearch={handleSearch}/> */}
           </nav>
@@ -28,7 +29,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/create" element={<CreatePost />} />
-              <Route path="/subs/:id" element={<Subreddit/>} />
+              <Route path="/subs/:id" element={<Subreddit />} />
               <Route path="/signup" element={<SignUp />} />
               <Route path="/login" element={<Login />} />
             </Routes>
