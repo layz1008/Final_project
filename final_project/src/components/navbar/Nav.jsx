@@ -7,7 +7,7 @@ import { UserContext } from '../../contexts/userContext.js';
 
 
 export default function Nav({ search, handleSearch }) {
-
+  const ACCESS_TOKEN = 'access_token'
   const {user, setUser, isUserLoggedIn} = useContext(UserContext)
   const logout = (event) => {
     event.preventDefault();
@@ -22,7 +22,7 @@ export default function Nav({ search, handleSearch }) {
           Home
         </NavLink>
        
-        {isUserLoggedIn() ? 
+        {isUserLoggedIn() || window.localStorage.getItem(ACCESS_TOKEN) ? 
           <NavLink onClick={logout} className={"navBarInfo"} id="navbar-log" to="/">Logout</NavLink>
           :
           <div>

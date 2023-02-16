@@ -29,7 +29,7 @@ const tokenRequest = axios.create({
 // Log in the user and store the access and refresh tokens in local storage
 const loginUser = (username, password) => {
   const loginBody = {"username": username, "password": password}
-
+  
   return tokenRequest.post(`/api/token/`, loginBody)
     .then((response) => {
       window.localStorage.setItem(ACCESS_TOKEN, response.data.access);
