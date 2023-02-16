@@ -32,7 +32,7 @@ const CreatePost = ({subID}) => {
   };
 
   if (submitted) {
-    return <div>Post submitted successfully. <button onClick={() => setSubmitted(false)}>Create another post</button></div>
+    return null;
   }
 
   return (
