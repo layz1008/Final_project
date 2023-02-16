@@ -4,44 +4,37 @@ import CreatePost from "./screens/createPost/CreatePost.jsx";
 import Subreddit from "./screens/subreddit/Subreddit.jsx";
 import SignUp from "./screens/signUp/SignUp.jsx";
 import { Routes, Route } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import Login from "./screens/login/Login.jsx";
+import {BrowserRouter as Router} from "react-router-dom"
+import { UserContext } from "./contexts/userContext.js";
+import React, { useState } from "react";
+
 
 function App() {
-  // const [posts, setPosts] = useState([]);
-  // const [filteredPost, setFilteredPosts] = useState([]);
-
-  // useEffect(() => {
-  //   const fetchPosts = async () => {
-  //     const response = await getPosts();
-  //     setPosts(response);
-  //     setFilteredPosts(response);
-  //   };
-  //   fetchPosts();
-  // }, []);
-
-  // const handleSearch = (e) => {
-  //   console.log("searching")
-  //   const {value} = e.target
-  //   const results = posts.filter((post) => {
-  //     return post.title.toLowerCase().includes(value.toLowerCase())
-  //   })
-  //   setFilteredPosts(results)
-  // }
+  const [user, setUser] = useState(null);
+  const isUserLoggedIn = () => {
+    return !!user;
+  }
 
   return (
     <div className="App">
-      <nav>
-        <Nav />
-        {/* <Nav handleSearch={handleSearch}/> */}
-      </nav>
-    <div>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/create" element={<CreatePost />} />
-        <Route path="/subs/:id" element={<Subreddit/>} />
-        <Route path="/signup" element={<SignUp />} />
-      </Routes>
-    </div>
+      <UserContext.Provider value={{user, setUser, isUserLoggedIn}}>
+        <Router>
+          <nav>
+            <Nav />
+            {/* <Nav handleSearch={handleSearch}/> */}
+          </nav>
+          <div>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/create" element={<CreatePost />} />
+              <Route path="/subs/:id" element={<Subreddit/>} />
+              <Route path="/signup" element={<SignUp />} />
+              <Route path="/login" element={<Login />} />
+            </Routes>
+          </div>
+        </Router>
+      </UserContext.Provider>
     </div>
   );
 }
