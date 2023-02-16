@@ -127,9 +127,11 @@
     background-color: rgba(255, 255, 255, 0.8);
   }
 
-  /* .scroll-left, .scroll-right {
-    margin: auto 0px;
-  } */
+  .scroll-left, .scroll-right {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 80px;
+  }
 
   .news-feed-scroll::-webkit-scrollbar{
     display: none;
