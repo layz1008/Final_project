@@ -130,6 +130,7 @@ export default function Subreddit({}) {
 
       </div>
     {/* if join-subreddit == Join clicked. check if user object contains subreddit-ID then change button to Joined if not display join */}
+    <div className='sub-post'>
     {posts.map((post) => (
           <Post
             key={post.id}
@@ -146,7 +147,7 @@ export default function Subreddit({}) {
           setDisplayModal={setDisplayModal}
           comments={comments}
           />
-          
+    </div>
     </div>
     
   );

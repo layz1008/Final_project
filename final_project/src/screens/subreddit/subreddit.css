@@ -1,7 +1,7 @@
 #subredditHeader{
     display:flex;
     flex-flow: row;
-    /* justify-content: space-around; */
+    justify-content: space-around;
     align-content: center;
     background-color: white;
     width: 70%;
@@ -26,6 +26,7 @@
     margin-bottom: -5px;
     color: #467172;
     margin-left: 45px;
+    width: 335px;
 }
 
 #sub-link {
@@ -38,11 +39,11 @@
     display: flex;
     align-self: center;
     flex-flow: row wrap;
+    /* max-width: 400px; */
     max-width: 200px;
     margin: 5px;
     color: #467172;
-    margin-left: 55px;
-
+    margin-left: 10px;
 }
 
 #filter-div{
@@ -57,7 +58,6 @@
     background-color: white;
     border-color: #1DC9A0;
     color: #467172;
-
 }
 
 #subreddit-banner-dropdown-menu-label{
@@ -86,6 +86,37 @@
     transition-duration: .2s;
 }
 
+.new-post-button{
+    display: flex;
+    flex-flow: row wrap;
+    height: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 5px 10px;
+    margin-left: -10px;
+}
+
+.create-buttons #close-post {
+    margin-left: 420px;
+    height: 40px;
+    margin-top: 8px;    
+    background-color: #467172;
+}
+
+.sub-post .post-card{
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+      rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+      rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    width: 51vw;
+    height: 500px;
+    margin: auto;
+    margin-bottom: 20px;
+    color: white;
+    /* background-color: red; */
+}
+
 @media screen and (max-width: 390px) {
     #subredditHeader {
         margin-top: 80px;
@@ -104,6 +135,7 @@
         margin-left: 0px;
         margin-top: -2px;
         margin-bottom: 0px;
+        max-width: 290px;
     }
     #sub-link {
         margin-left: 10px;
@@ -112,6 +144,7 @@
         font-size: 12px;
         margin-top: -18px;
         margin-left: -12px;
+        width: 230px;
     }
 
     #join-button{
@@ -122,24 +155,50 @@
     #filter-div{
         margin-top: -20px;
         margin-left: 0;
-
     }
     #subreddit-banner-dropdown-menu-label{
         margin-right: -40px;
     }
-}
+    .new-post-button{
+        margin-top: -10px;
+        height: 25px;
+        margin-right: -40px;
+    }
+    .create-buttons #close-post {
+        margin-top: -30px;
+        height: 25px;
+        margin-right: 90px;
+    }
+    .sub-post .post-card{
+        width: 99vw;
+    }
+    
+      .post-card {
+    width: 98vw;
+    height: 125vw;
+    top: 5%;
+  }  
 
-.new-post-button{
-    display: flex;
-    flex-flow: row wrap;
-    height: 50px;
-    margin: auto 0px;
-    padding: 5px 10px;
-    margin-left: 150px;
-}
+  #upVotes, #downVotes{
+    font-size: 18px;
+  }
 
-.create-buttons #close-post {
-    margin-left: 600px;
-    height: 40px;
-    margin-top: 8px;    
+  #comments-tab {
+    font-size: 14px;
+    padding-left: 0px;
+  }
+  .post-card {
+    width: 98vw;
+    height: 125vw;
+    top: 5%;
+  }  
+
+  #upVotes, #downVotes{
+    font-size: 18px;
+  }
+
+  #comments-tab {
+    font-size: 14px;
+    padding-left: 0px;
+  }
 }
