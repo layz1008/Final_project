@@ -3,11 +3,14 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import "./createpost.css";
 import { createPost } from "../../services/posts";
+import Subreddit from "../subreddit/Subreddit"
 
 const CreatePost = () => {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
   const [img_url, setImageUrl] = useState("");
+
+  console.log(Subreddit)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,9 +31,14 @@ const CreatePost = () => {
     }
   };
 
+  
+
   return (
     <div className="create-post">
-      <h2>Create a New Post</h2>
+      <div className="close-button-container">
+        <h2>Create a New Post</h2>
+        <button className="close-button">X</button>
+      </div>
       <form onSubmit={handleSubmit}>
         <div className="inputbox">
           <label htmlFor="title">Title:</label>

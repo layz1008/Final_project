@@ -6,9 +6,9 @@ import { Link, useParams, useLocation, Route } from "react-router-dom";
 import { getPosts, getPost } from "../../services/posts";
 import { getComments } from "../../services/comments";
 import { getSubs, getSub } from "../../services/subs";
+import CreatePost from "../createPost/CreatePost";
 
-
-export default function Subreddit() {
+export default function Subreddit({}) {
   const [posts, setPosts] = useState([]);
   const [modalPost, setModalPost] = useState({});
   const [displayModal, setDisplayModal] = useState(false);
@@ -17,6 +17,7 @@ export default function Subreddit() {
   const [subDescription, setSubDescription] = useState([]);
   const [creator, setCreator] = useState([]);
   const [join, setJoin] = useState([])
+  const [show, setShow] = useState(false)
   let {id} = useParams();
   const subPath = useLocation();
   
@@ -24,9 +25,19 @@ export default function Subreddit() {
     
   }
 
+  function openCreateModal(){
+    return setShow(true)
+    console.log(show)
+  }
+  function closeCreateModal(){
+    return setShow(false)
+    console.log(show)
+  }
+  
+  
   async function joinSubreddit(){
     const findFollowers = await getSub(id)
-    console.log(findFollowers.followers)
+    // console.log(findFollowers.followers)
     if('userID is included in follower list'){
       return <button id = "join-button">Joined</button>
       // update followers array(subs) to include useID
@@ -84,6 +95,8 @@ export default function Subreddit() {
   }, []); 
 
 
+  
+
   return (
       <div className="home-page-main-container">
       
@@ -110,6 +123,8 @@ export default function Subreddit() {
             <option value = 'mostDownVotes'>Most Downvotes</option>
           </select>
         </div>
+        {/* <button className="new-post-button" onClick={openCreateModal}>New Post</button> */}
+        {/* <button onClick={openCreateModal}>newPost</button> */}
       </div>
     {/* if join-subreddit == Join clicked. check if user object contains subreddit-ID then change button to Joined if not display join */}
     {posts.map((post) => (
@@ -122,13 +137,16 @@ export default function Subreddit() {
           />
         ))}
 
-<PostModal
-        modalPost={modalPost}
-        displayModal={displayModal}
-        setDisplayModal={setDisplayModal}
-        comments={comments}
-        />
+          <PostModal
+          modalPost={modalPost}
+          displayModal={displayModal}
+          setDisplayModal={setDisplayModal}
+          comments={comments}
+          />
+          {show == true ? 
+          <CreatePost/>:null}
     </div>
     
   );
+  
 }

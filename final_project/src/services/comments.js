@@ -1,4 +1,4 @@
-import api from "./apiConfig.js";
+import api from "./auth.js"
 
 export const getComments = async () => {
     try {
