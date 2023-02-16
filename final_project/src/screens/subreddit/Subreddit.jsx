@@ -18,6 +18,7 @@ export default function Subreddit({}) {
   const [creator, setCreator] = useState([]);
   const [join, setJoin] = useState([])
   const [show, setShow] = useState(false)
+  const [subID,setSubID] = useState(0)
   let {id} = useParams();
   const subPath = useLocation();
   
@@ -54,6 +55,7 @@ export default function Subreddit({}) {
     setSubTitle(ids.title)
     setCreator(ids.creator)
     setSubDescription(ids.description)
+    setSubID(ids.id)
     // console.log(ids)
   }
   
@@ -123,8 +125,16 @@ export default function Subreddit({}) {
             <option value = 'mostDownVotes'>Most Downvotes</option>
           </select>
         </div>
-        {/* <button className="new-post-button" onClick={openCreateModal}>New Post</button> */}
+        
         {/* <button onClick={openCreateModal}>newPost</button> */}
+
+        {show == true ? 
+          <div>
+          <CreatePost subID={subID}/>
+          <button className="new-post-button" onClick={closeCreateModal}>Close</button>
+          </div>
+          :<button className="new-post-button" onClick={openCreateModal}>New Post</button>}
+
       </div>
     {/* if join-subreddit == Join clicked. check if user object contains subreddit-ID then change button to Joined if not display join */}
     {posts.map((post) => (
@@ -143,8 +153,7 @@ export default function Subreddit({}) {
           setDisplayModal={setDisplayModal}
           comments={comments}
           />
-          {show == true ? 
-          <CreatePost/>:null}
+          
     </div>
     
   );

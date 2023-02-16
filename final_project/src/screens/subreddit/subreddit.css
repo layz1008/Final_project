@@ -128,3 +128,8 @@
         margin-right: -40px;
     }
 }
+
+.new-post-button{
+    display: flex;
+    flex-flow: row wrap;
+}
