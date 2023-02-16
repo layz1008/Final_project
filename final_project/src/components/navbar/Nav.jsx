@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { NavLink } from "react-router-dom";
-import "./nav.css";
+import { NavLink, useLocation, useParams, Route } from "react-router-dom";
+import "./nav.css"
 import HamburgerMenu from "../HamburgerMenu/HamburgerMenu.jsx";
 import { logoutUser } from '../../services/auth.js';
 import { UserContext } from '../../contexts/userContext.js';
@@ -21,16 +21,21 @@ export default function Nav({ search, handleSearch }) {
         <NavLink className={"navBarInfo"} to="/">
           Home
         </NavLink>
-        <NavLink className={"navBarInfo"} to="/create">
+        <NavLink className={"navBarInfo Link"} to="/create">
           Create Post
         </NavLink>
         <NavLink className={"navBarInfo"} id="navbar-buttons" to="/signup">
-          Sign Up
+          Sign-Up
         </NavLink>
         {isUserLoggedIn() ? 
           <NavLink onClick={logout} className={"navBarInfo"} id="navbar-log" to="/">Logout</NavLink>
           :
-          <NavLink className={"navBarInfo"} id="navbar-log" to="/login">Login</NavLink>
+          <div>
+          <NavLink className={"navBarInfo"} id="navbar-buttons" to="/login">Login</NavLink>
+          <NavLink className={"navBarInfo"} id="navbar-buttons" to="/signup">
+          Sign-Up
+        </NavLink>
+        </div>
         }
       </nav>
     </div>
