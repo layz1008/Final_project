@@ -83,13 +83,13 @@ function PostModal({ modalPost, displayModal, setDisplayModal, comments }) {
           <div id="votes-div">
             <div className="votes">{upVotes}</div>
             <button className="upvote-button" onClick={handleUpVote}>
-              Upvote
+            ⬆
             </button>
           </div>
           <div id="votes-div">
             <div className="votes2">{downVotes}</div>
             <button className="downvote-button" onClick={handleDownVote}>
-              Downvote
+            ⬇
             </button>
           </div>
         </div>

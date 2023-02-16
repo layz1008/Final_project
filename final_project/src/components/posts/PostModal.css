@@ -68,11 +68,19 @@
     color: red;
   }
   
-  .upvote-button,
-  .downvote-button {
-    background-color: transparent;
+  .upvote-button{
+    background-color: green;
     border: none;
-    color: gray;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+
+  }
+
+  .downvote-button {
+    background-color: red;
+    border: none;
+    color: white;
     font-size: 1rem;
     cursor: pointer;
   }
@@ -82,25 +90,31 @@
     color: black;
   }
   
-  ..comments-container {
-    border-top: 1px solid lightgray;
-    margin-top: 20px;
-    padding-top: 20px;
-    background-color: #9D9393;
-    border: 1px solid #ccc; 
-    border-radius: 5px; 
+  .comments-container {
+    border-radius: 19px;
+    background: #3e4141;
+    box-shadow: inset 34px 34px 71px #1b1c1c,
+                inset -34px -34px 71px #616666;
+    
   }
   
   
   .comments-scrollable {
     max-height: 200px;
     overflow: auto;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
   }
   
   .comment-box {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+    
     
   }
   
@@ -109,9 +123,10 @@
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
-    border: 1px solid lightgray;
+    border: 1px solid rgb(211, 211, 211);
     resize: vertical;
     min-height: 80px;
+    
   }
   
   .comment-box button {
@@ -141,9 +156,11 @@
     border: 1px solid #ccc;
     padding: 10px;
     margin-bottom: 10px;
-    background-color: #1E97DC;
-    border-radius: 40px;
+    
+    border-radius: 30px;
     border: 1px solid #ccc; 
+    width: 90%;
+    
     
     
   }
@@ -156,6 +173,7 @@
     font-size: 1.2rem;
     margin: 0;
     padding: 10px;
+    color: white;
   }
   
   
