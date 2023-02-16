@@ -94,17 +94,19 @@
   .news-feed-scroll-wrapper {
     position: relative;
     overflow: hidden;
+    margin-bottom: 2px;
   }
 
   .news-feed-scroll {
     display: flex;
-    column-gap: 10px;
+    column-gap: 4px;
     width: 100vw;
     overflow-x: scroll;
     scroll-behavior: smooth;
     overflow-y: hidden;
     margin-top: 82px;
   }
+
   .scroll-buttons {
     position: absolute;
     top: 50%;
@@ -171,5 +173,23 @@
     text-decoration: none;
   }
 
+  @media screen and (max-width: 390px) {
+    .news-feed-scroll {
+      column-gap: 2px;
+    }
+    .news-feed-container {
+      height: 90px;
+      width: 90px;
+      background-size: cover;
+      border-radius: 10px;
+    }
   
+    .news-feed-sub-container {
+      height: 90px;
+      width: 90px;
+  }
+  .news-feed-title {
+    font-size: 12px;
+  }
+}
   
