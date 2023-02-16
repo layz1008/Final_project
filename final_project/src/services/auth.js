@@ -8,7 +8,11 @@ const ACCESS_TOKEN = 'access_token'
 const REFRESH_TOKEN = 'refresh_token'
 
 const api = axios.create({
-  baseURL: process.env.NODE_ENV === 'production' ? 'https://final-project-server-production.up.railway.app' : 'https://final-project-server-production.up.railway.app/'
+  baseURL: process.env.NODE_ENV === 'production' ? 'https://final-project-server-production.up.railway.app' : 'https://final-project-server-production.up.railway.app/',
+  headers: {
+    'Authorization': `Bearer ${window.localStorage.getItem(ACCESS_TOKEN)}`,
+    'Content-Type': 'application/json',
+  }
 })
 
 let tokenRequest = axios.create({
