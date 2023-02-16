@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { NavLink } from "react-router-dom";
 import "./nav.css";
-import SignInModal from "./SignIn.jsx";
 import HamburgerMenu from "../HamburgerMenu/HamburgerMenu.jsx";
 import { logoutUser } from '../../services/auth.js';
 import { UserContext } from '../../contexts/userContext.js';
