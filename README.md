@@ -24,7 +24,14 @@ Executing the commands mentioned below one by one in your command line will help
 
 ```
 git clone https://github.com/jozkan30/Final-Project.git
+
+```
+
+```
 cd ./final-project
+```
+
+```
 npm install
 ```
 
