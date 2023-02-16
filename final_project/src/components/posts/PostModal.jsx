@@ -1,8 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
 import "./PostModal.css";
 import { updatePost } from "../../services/posts";
 import CommentBox from "./CommentBox";
+
 import { createComment, getComments } from "../../services/comments";
+import { UserContext } from "../../contexts/userContext";
+
 
 function PostModal({ modalPost, displayModal, setDisplayModal, comments, setComments, banana }) {
     const body = document.querySelector("body");
@@ -11,6 +14,7 @@ function PostModal({ modalPost, displayModal, setDisplayModal, comments, setComm
         setDisplayModal(false);
         body.classList.remove('freeze-body');
     };
+
 
     // const [upVotes, setUpVotes] = useState(0);
 
@@ -47,6 +51,7 @@ function PostModal({ modalPost, displayModal, setDisplayModal, comments, setComm
       } catch (error) {
           console.log("update post error:", error);
       }
+
   };
 
 
