@@ -5,12 +5,11 @@ import "./createpost.css";
 import { createPost } from "../../services/posts";
 import Subreddit from "../subreddit/Subreddit"
 
-const CreatePost = () => {
+const CreatePost = ({subID}) => {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
   const [img_url, setImageUrl] = useState("");
 
-  console.log(Subreddit)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,7 +20,7 @@ const CreatePost = () => {
       up_votes: 0,
       down_votes: 0,
       user: 1,
-      sub: 2,
+      sub: subID,
     };
     try {
       await createPost(post);
@@ -37,7 +36,7 @@ const CreatePost = () => {
     <div className="create-post">
       <div className="close-button-container">
         <h2>Create a New Post</h2>
-        <button className="close-button">X</button>
+        {/* <button className="close-button">X</button> */}
       </div>
       <form onSubmit={handleSubmit}>
         <div className="inputbox">
