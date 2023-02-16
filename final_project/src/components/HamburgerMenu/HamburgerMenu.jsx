@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { getSubs } from "../../services/subs.js";
+
 import "./hamburgerMenu.css";
 
 function HamburgerMenu() {
@@ -8,6 +9,7 @@ function HamburgerMenu() {
   const [subs, setSubs] = useState([]);
   const showSidebar = () => setSidebar(!sidebar);
   const menuRef = useRef();
+
 
   useEffect(() => {
     const fetchSubs = async () => {
@@ -49,7 +51,8 @@ function HamburgerMenu() {
             <li id="subreddits-header">SUBREDDITS</li>
             {subs.map((sub, index) => (
               <li key={index}>
-                <Link to={`/subs/${index + 1}`}>{sub.title}</Link>
+                {/* <Link to={`/subs/${index + 1}`}>{sub.title}</Link> */}
+                <Link to={`/subs/${sub.id}`}>{sub.title}</Link>
               </li>
             ))}
           </div>

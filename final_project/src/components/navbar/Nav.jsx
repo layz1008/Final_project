@@ -18,31 +18,29 @@ export default function Nav({ search, handleSearch }) {
     <div>
       <nav className="navBar">
         <HamburgerMenu />
-        <NavLink className={"navBarInfo Link"} to="/">
+        <NavLink className={"navBarInfo"} to="/">
           Home
         </NavLink>
-        <div className="search">
-        <input
-          type="text"
-          className="nav-searchInput"
-          onChange={handleSearch}
-        />
-        </div>
-        {location == "/subs/1" || location == "/subs/2" || location == "/subs/3" || location == "/subs/4"  ?
-        <NavLink className={"navBarInfo Link"} to="/create">
+
+        <NavLink className={"navBarInfo"} to="/create">
           Create Post
         </NavLink>
-        : null}
-        
+        <NavLink className={"navBarInfo"} id="navbar-buttons" to="/signup">
+          Sign Up
+        </NavLink>
         {isUserLoggedIn() ? 
-          <NavLink onClick={logout} className={"navBarInfo"} id="navbar-buttons" to="/">Logout</NavLink>
+          <NavLink onClick={logout} className={"navBarInfo"} id="navbar-log" to="/">Logout</NavLink>
           :
+
+          <NavLink className={"navBarInfo"} id="navbar-log" to="/login">Login</NavLink>
+
           <div>
           <NavLink className={"navBarInfo"} id="navbar-buttons" to="/login">Login</NavLink>
           <NavLink className={"navBarInfo"} id="navbar-buttons" to="/signup">
           Sign-Up
         </NavLink>
         </div>
+
         }
       </nav>
     </div>
