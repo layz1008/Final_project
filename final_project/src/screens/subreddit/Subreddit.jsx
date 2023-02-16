@@ -117,14 +117,7 @@ export default function Subreddit({}) {
         {/* requiest the subreddit description from the subs table */}
         <p id ='subreddit-description'>{subDescription}</p>
         {/* contains functions for filtering for: chronological order, highest upvotes, and highest upvotes in a 24h time frame. picking any of the list items will change the state of the page.*/}
-        <div id = 'filter-div'>
-          <label for ='post-filters'className = 'drop-down-menu' id ='subreddit-banner-dropdown-menu-label'>Post Filters:  </label>
-          <select name = 'post-filters' id = 'post-filter-options'>
-            <option value = 'trending'>Trending</option>
-            <option value = 'mostUpVotes'>Most Upvotes</option>
-            <option value = 'mostDownVotes'>Most Downvotes</option>
-          </select>
-        </div>
+        
         
         {/* <button onClick={openCreateModal}>newPost</button> */}
 

@@ -8,7 +8,12 @@ const ACCESS_TOKEN = 'access_token'
 const REFRESH_TOKEN = 'refresh_token'
 
 const api = axios.create({
-  baseURL: process.env.NODE_ENV === 'production' ? 'https://final-project-server-production.up.railway.app' : 'https://final-project-server-production.up.railway.app/'
+  baseURL: process.env.NODE_ENV === 'production' ? 'https://final-project-server-production.up.railway.app' : 'https://final-project-server-production.up.railway.app/',
+  headers: {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json',
+    'Authorization': `Bearer ${window.localStorage.getItem(ACCESS_TOKEN)}`
+  }
 })
 
 let tokenRequest = axios.create({
@@ -16,7 +21,7 @@ let tokenRequest = axios.create({
     timeout: 5000,
     headers: {
       'Content-Type': 'application/json',
-      'Accept': 'application/json'
+      'Accept': 'application/json',
     }
 })
 
@@ -68,7 +73,7 @@ const authRequest = axios.create({
     timeout: 5000,
     headers: {
       'Authorization': `Bearer ${window.localStorage.getItem(ACCESS_TOKEN)}`,
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     }
 });
 authRequest.interceptors.response.use(
