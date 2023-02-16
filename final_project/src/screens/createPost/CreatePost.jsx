@@ -30,8 +30,6 @@ const CreatePost = ({subID}) => {
     }
   };
 
-  
-
   return (
     <div className="create-post">
       <div className="close-button-container">
