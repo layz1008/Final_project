@@ -24,9 +24,6 @@ export default function Nav({ search, handleSearch }) {
         <NavLink className={"navBarInfo Link"} to="/create">
           Create Post
         </NavLink>
-        <NavLink className={"navBarInfo"} id="navbar-buttons" to="/signup">
-          Sign-Up
-        </NavLink>
         {isUserLoggedIn() ? 
           <NavLink onClick={logout} className={"navBarInfo"} id="navbar-log" to="/">Logout</NavLink>
           :
