@@ -5,7 +5,9 @@ import SignInModal from "./SignIn.jsx";
 import HamburgerMenu from "../HamburgerMenu/HamburgerMenu.jsx";
 
 
-export default function Nav({ search, handleSearch }) {
+// export default function Nav({ search, handleSearch }) {
+export default function Nav() {
+
  
     return (
     <div>
@@ -14,13 +16,13 @@ export default function Nav({ search, handleSearch }) {
         <NavLink className={"navBarInfo Link"} to="/">
           Home
         </NavLink>
-        <div className="search">
+        {/* <div className="search">
         <input
           type="text"
           className="nav-search-input"
           onChange={handleSearch}
         />
-        </div>
+        </div> */}
         <NavLink className={"navBarInfo Link"} to="/create">
           Create Post 
         </NavLink>
