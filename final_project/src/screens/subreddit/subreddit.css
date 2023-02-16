@@ -132,4 +132,14 @@
 .new-post-button{
     display: flex;
     flex-flow: row wrap;
+    height: 50px;
+    margin: auto 0px;
+    padding: 5px 10px;
+    margin-left: 150px;
+}
+
+.create-buttons #close-post {
+    margin-left: 600px;
+    height: 40px;
+    margin-top: 8px;    
 }

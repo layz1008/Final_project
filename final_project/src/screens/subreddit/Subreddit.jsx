@@ -122,9 +122,9 @@ export default function Subreddit({}) {
         {/* <button onClick={openCreateModal}>newPost</button> */}
 
         {show == true ? 
-          <div>
+          <div className="create-buttons">
           <CreatePost subID={subID}/>
-          <button className="new-post-button" onClick={closeCreateModal}>Close</button>
+            <button className="new-post-button" id="close-post" onClick={closeCreateModal}>Close</button>
           </div>
           :<button className="new-post-button" onClick={openCreateModal}>New Post</button>}
 
