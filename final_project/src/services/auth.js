@@ -29,7 +29,7 @@ let tokenRequest = axios.create({
 
 const loginUser = (username, password) => {
   const loginBody = {"username": username, "password": password}
-
+  
   return tokenRequest.post(`/api/token/`, loginBody)
     .then((response)=> {
       window.localStorage.setItem(ACCESS_TOKEN, response.data.access);
@@ -107,6 +107,7 @@ const logoutUser = () => {
   window.localStorage.removeItem(ACCESS_TOKEN);
   window.localStorage.removeItem(REFRESH_TOKEN);
   authRequest.defaults.headers['Authorization'] = "";
+  console.log(accessT)
 }
 
 export { tokenRequest, loginUser, logoutUser, refreshToken, authRequest,
