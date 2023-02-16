@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./CommentBox.css";
 import { createComment } from "../../services/comments";
+import {deletePost} from "../../services/posts.js"
+import {  useParams, useNavigate } from "react-router-dom";
 
 function CommentBox({ postId }) {
   const [commentText, setCommentText] = useState("");
@@ -31,6 +33,17 @@ function CommentBox({ postId }) {
     }
   };
 
+
+  let navigate = useNavigate();
+
+  async function handleDelete() {
+    console.log(postId)
+    await deletePost(postId);
+    window.location.reload()
+    // navigate("/done", { replace: true });
+  }
+
+
   return (
     <form className="comment-form" onSubmit={handleCommentSubmit}>
       <textarea
@@ -42,6 +55,9 @@ function CommentBox({ postId }) {
       <button className="comment-submit" type="submit">
         Submit
       </button>
+      <button className="eliminate" onClick={handleDelete}> Delete!
+      </button>
+
     </form>
   );
 }
