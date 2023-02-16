@@ -10,9 +10,8 @@ const REFRESH_TOKEN = 'refresh_token'
 const api = axios.create({
   baseURL: process.env.NODE_ENV === 'production' ? 'https://final-project-server-production.up.railway.app' : 'https://final-project-server-production.up.railway.app/',
   headers: {
+    'Authorization': `Bearer ${window.localStorage.getItem(ACCESS_TOKEN)}`,
     'Content-Type': 'application/json',
-    'Accept': 'application/json',
-    'Authorization': `Bearer ${window.localStorage.getItem(ACCESS_TOKEN)}`
   }
 })
 
