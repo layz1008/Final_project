@@ -86,7 +86,7 @@ export default function Home() {
       </div>
       <div className="home-page-filter-container">
         <p className="filter-text"> Filter By:</p>
-        <div>
+        <div id="filter-button">
           <button onClick={sort}> Likes 👍  </button>
           <button onClick={dislikes}> Not likes 👎 </button>
         </div>
