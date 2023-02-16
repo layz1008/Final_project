@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
 import "./PostModal.css";
 import { updatePost } from "../../services/posts";
 import CommentBox from "./CommentBox";
+import { UserContext } from "../../contexts/userContext";
 
 function PostModal({ modalPost, displayModal, setDisplayModal, comments }) {
   const body = document.querySelector("body");
@@ -13,6 +14,7 @@ function PostModal({ modalPost, displayModal, setDisplayModal, comments }) {
 
   const [upVotes, setUpVotes] = useState(modalPost.up_votes);
   const [downVotes, setDownVotes] = useState(modalPost.down_votes);
+  const {user, setUser, isUserLoggedIn} = useContext(UserContext)
 
   const handleUpVote = async () => {
     const newUpVotes = upVotes + 1;
