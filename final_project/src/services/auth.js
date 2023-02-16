@@ -7,11 +7,14 @@ const BASE_URL = "https://final-project-server-production.up.railway.app"
 const ACCESS_TOKEN = 'access_token'
 const REFRESH_TOKEN = 'refresh_token'
 
+const accessT = window.localStorage.getItem(ACCESS_TOKEN) ? `Bearer ${window.localStorage.getItem(ACCESS_TOKEN)}` : "hi"
+
 const api = axios.create({
   baseURL: process.env.NODE_ENV === 'production' ? 'https://final-project-server-production.up.railway.app' : 'https://final-project-server-production.up.railway.app/',
   headers: {
-    'Authorization': `Bearer ${window.localStorage.getItem(ACCESS_TOKEN)}`,
+    'Authorization': accessT,
     'Content-Type': 'application/json',
+    'Accept': 'application/json'
   }
 })
 
