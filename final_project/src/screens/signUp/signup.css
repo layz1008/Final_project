@@ -15,11 +15,12 @@
     width: 40%;
     min-width: 360px;
     height: 430px;
+    top: 5%;
 }
 
 @media screen and (max-width: 390px) {
     .form {
-        margin-top: 150px;
+        margin-top: 130px;
     }
 }
 .sign-up-heading {

@@ -1,10 +1,12 @@
 #subredditHeader{
     display:flex;
     flex-flow: row;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     align-content: center;
-    background-color: orangered;
-    min-width: 775px;
+    background-color: white;
+    width: 70%;
+    margin-top: 80px;
+    margin-bottom: 25px;
 }
 
 #user-avatar{
@@ -12,6 +14,7 @@
     height: 35px;
     width: 35px;
     border-radius: 20px;
+    margin-left: 25px;
 }
 
 #title-subLink-join{
@@ -21,6 +24,14 @@
 
 #sub-title{
     margin-bottom: -5px;
+    color: #467172;
+    margin-left: 45px;
+}
+
+#sub-link {
+    text-decoration: none;
+    color: #1DC9A0;
+    margin-left: 50px;
 }
 
 #subreddit-description{
@@ -29,38 +40,91 @@
     flex-flow: row wrap;
     max-width: 200px;
     margin: 5px;
+    color: #467172;
+    margin-left: 55px;
+
 }
 
 #filter-div{
     display:flex;
     flex-flow: column;
+    margin-top: 20px;
+    margin-left: 100px;
 }
 
 #post-filter-options{
     align-self: center;
-    background-color: orangered;
-    
+    background-color: white;
+    border-color: #1DC9A0;
+    color: #467172;
+
 }
 
 #subreddit-banner-dropdown-menu-label{
     align-self: center;
     margin-right: 10px;
+    color: #467172;
 }
 
 #join-button{
     align-self: center;
-    background-color: orangered;
+    background-color: #1DC9A0;
     color: white;
-    border: solid white;
+    border: solid #1DC9A0;
     border-width: 2px;
     border-radius: 10px;
     height: 20px;
     width: 50px;
     font-size: medium;
+    margin-left: 45px;
 }
+
 #join-button:hover{
     background-color: white;
-    color: orangered;
-    border: solid orangered;
+    color: #1DC9A0;
+    border: solid #1DC9A0;
     transition-duration: .2s;
+}
+
+@media screen and (max-width: 390px) {
+    #subredditHeader {
+        margin-top: 80px;
+        max-width: 390px;
+        height: 100px;
+        flex-flow: wrap;
+        justify-content: space-around;
+        width: 100%;
+    }
+    #user-avatar{
+        margin-left: 2px;
+        margin-top: -20px;
+    }
+    #sub-title {
+        font-size: 25px;
+        margin-left: 0px;
+        margin-top: -2px;
+        margin-bottom: 1px;
+    }
+    #sub-link {
+        margin-left: 10px;
+    }
+    #subreddit-description {
+        font-size: 12px;
+        margin-top: -18px;
+        margin-left: -12px;
+    }
+
+    #join-button{
+        margin-top: -25px;
+        margin-left: 0px;
+    }
+
+    #filter-div{
+        margin-top: -20px;
+        margin-left: 0;
+
+    }
+    #subreddit-banner-dropdown-menu-label{
+        margin-right: -40px;
+    }
 }
