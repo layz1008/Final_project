@@ -48,6 +48,8 @@ function CommentBox({ postId, refresh, setRefresh }) {
 
   return (
     <form className="comment-form" onSubmit={handleCommentSubmit}>
+            <button className="eliminate" onClick={handleDelete}> 🗑️
+      </button>
       <textarea
         className="comment-input"
         value={commentText}
@@ -57,9 +59,6 @@ function CommentBox({ postId, refresh, setRefresh }) {
       <button className="comment-submit" type="submit">
         Submit
       </button>
-      <button className="eliminate" onClick={handleDelete}> Delete!
-      </button>
-
     </form>
   );
 }
