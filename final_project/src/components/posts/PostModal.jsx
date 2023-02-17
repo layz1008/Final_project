@@ -7,7 +7,7 @@ import { createComment, getComments } from "../../services/comments";
 import { UserContext } from "../../contexts/userContext";
 
 
-function PostModal({ modalPost, displayModal, setDisplayModal, comments, setComments, banana }) {
+function PostModal({ modalPost, displayModal, setDisplayModal, comments, setComments, banana, refresh, setRefresh }) {
     const body = document.querySelector("body");
 
     const handleClose = () => {
@@ -20,7 +20,9 @@ function PostModal({ modalPost, displayModal, setDisplayModal, comments, setComm
 
     const [modalState, setModalState] = useState( {
     })
-
+    const [voteHelp,setVoteHelp] = useState(new Audio("https://us-tuna-sounds-files.voicemod.net/af1fea8c-7061-423d-9f14-21c73cf7acd0-1656841686081.mp3"))
+    const [voteHelp2,setVoteHelp2] = useState(new Audio("https://www.myinstants.com/media/sounds/taco-bell-bong-sfx.mp3"))
+    
     useEffect(() => {
         setModalState(modalPost)
     }, [modalPost])
@@ -31,8 +33,8 @@ function PostModal({ modalPost, displayModal, setDisplayModal, comments, setComm
         let newUpVotes = modalState.up_votes + 1
         setModalState(prev => ({...prev, up_votes : newUpVotes}))
         try {
+            voteHelp2.play()
             const response = await updatePost(modalPost.id, {...modalState});
-
             console.log("update post response:", response); 
         } catch (error) {
             console.log("update post error:", error);
@@ -45,8 +47,8 @@ function PostModal({ modalPost, displayModal, setDisplayModal, comments, setComm
       let newDownVotes = modalState.down_votes + 1
       setModalState(prev => ({...prev, down_votes : newDownVotes}))
       try {
+          voteHelp.play()
           const response = await updatePost(modalPost.id, {...modalState});
-
           console.log("update post response:", response); 
       } catch (error) {
           console.log("update post error:", error);
@@ -119,7 +121,7 @@ function PostModal({ modalPost, displayModal, setDisplayModal, comments, setComm
                                 ))}
                     </div>
                 </div>
-                <CommentBox postId={modalPost.id} addComment={handleAddComment}  setComments={setComments}/>
+                <CommentBox refresh={refresh} setRefresh={setRefresh} postId={modalPost.id} addComment={handleAddComment}  setComments={setComments}/>
                 <svg className="close-post-modal" onClick={handleClose}>
                     <line
                         x1="6"

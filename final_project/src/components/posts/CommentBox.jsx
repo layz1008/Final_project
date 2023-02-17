@@ -4,8 +4,10 @@ import { createComment } from "../../services/comments";
 import {deletePost} from "../../services/posts.js"
 import { useParams, useNavigate } from "react-router-dom";
 
-function CommentBox({ postId }) {
+function CommentBox({ postId, refresh, setRefresh }) {
   const [commentText, setCommentText] = useState("");
+  const [deleteHelp,setDeleteHelp] = useState(new Audio('https://www.myinstants.com/media/sounds/y2mate_B59ZHvq.mp3'
+  ))
 
   const handleCommentChange = (event) => {
     setCommentText(event.target.value);
@@ -27,6 +29,8 @@ function CommentBox({ postId }) {
       const createdComment = await createComment(newComment);
       console.log("Comment created:", createdComment);
       setCommentText("");
+      setRefresh(prev => !prev)
+      console.log(refresh)
       // add code to update the UI with the new comment if needed
     } catch (error) {
       console.error("Error creating comment:", error);
@@ -38,8 +42,12 @@ function CommentBox({ postId }) {
 
   async function handleDelete() {
     console.log(postId)
+    deleteHelp.play()
     await deletePost(postId);
-    window.location.reload()
+    setTimeout(() => {
+      window.location.reload();
+    }, "6000")
+    
 
   }
 

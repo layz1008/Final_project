@@ -16,6 +16,7 @@ export default function Home() {
   const [displayModal, setDisplayModal] = useState(false);
   const [sortPost, setSortPost] = useState("");
   const {user, setUser, isUserLoggedIn} = useContext(UserContext)
+  const [refresh,setRefresh] = useState(false)
 
   useEffect(() => {
     fetchPosts();
@@ -39,7 +40,7 @@ export default function Home() {
     };
 
     fetchComment();
-  }, []);
+  }, [refresh]);
 
   useEffect(() => {
     const newsAPI = async () => {
@@ -156,6 +157,8 @@ export default function Home() {
         displayModal={displayModal}
         setDisplayModal={setDisplayModal}
         comments={comments}
+        refresh={refresh}
+        setRefresh={setRefresh}
       />
     </div>
   );
