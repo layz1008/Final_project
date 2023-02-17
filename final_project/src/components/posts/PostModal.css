@@ -176,6 +176,7 @@
   @media screen and (max-width: 390px) {
     .post-modal {
       margin-top: 40px;
+      width: 100vw;
     }
     .close-post-modal {
       margin-top: 65px;
