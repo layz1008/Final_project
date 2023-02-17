@@ -21,8 +21,10 @@ export default function Nav({ search, handleSearch }) {
         <NavLink className={"navBarInfo"} to="/">
           Home
         </NavLink>
+
        
         {isUserLoggedIn() || window.localStorage.getItem(ACCESS_TOKEN) ? 
+
           <NavLink onClick={logout} className={"navBarInfo"} id="navbar-log" to="/">Logout</NavLink>
           :
           <div>
