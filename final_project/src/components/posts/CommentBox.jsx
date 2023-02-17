@@ -6,6 +6,8 @@ import { useParams, useNavigate } from "react-router-dom";
 
 function CommentBox({ postId, refresh, setRefresh }) {
   const [commentText, setCommentText] = useState("");
+  const [deleteHelp,setDeleteHelp] = useState(new Audio('https://www.myinstants.com/media/sounds/y2mate_B59ZHvq.mp3'
+  ))
 
   const handleCommentChange = (event) => {
     setCommentText(event.target.value);
@@ -40,8 +42,12 @@ function CommentBox({ postId, refresh, setRefresh }) {
 
   async function handleDelete() {
     console.log(postId)
+    deleteHelp.play()
     await deletePost(postId);
-    window.location.reload()
+    setTimeout(() => {
+      window.location.reload();
+    }, "6000")
+    
 
   }
 

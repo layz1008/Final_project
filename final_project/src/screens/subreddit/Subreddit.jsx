@@ -19,6 +19,11 @@ export default function Subreddit({}) {
   const [join, setJoin] = useState([])
   const [show, setShow] = useState(false)
   const [subID,setSubID] = useState(0)
+  const [refresh,setRefresh] = useState(false)
+  const [joinn,setJoinn] = useState(new Audio('https://us-tuna-sounds-files.voicemod.net/36b12885-18d0-44ed-97ec-ff3e0956f211-1662757013368.mp3'
+  )) 
+  const [postHelp,setPostHelp] = useState(new Audio('https://www.myinstants.com/media/sounds/ohyes.mp3'
+  ))
   let {id} = useParams();
   const subPath = useLocation();
   
@@ -27,6 +32,7 @@ export default function Subreddit({}) {
   }
 
   function openCreateModal(){
+    postHelp.play()
     return setShow(true)
     console.log(show)
   }
@@ -94,9 +100,11 @@ export default function Subreddit({}) {
     };
 
     fetchComment();
-  }, []); 
+  }, [refresh]); 
 
-
+  function joinIt() {
+    joinn.play();
+  }
   
 
   return (
@@ -113,7 +121,7 @@ export default function Subreddit({}) {
           <Link to ='/subs/:id' id = 'sub-link'>r/{subTitle}</Link>
         </div>
         {/* onClick, add subredditId to user list of subreddit id's. if it exists within the user library then button should read "Joined" if clicked in this state button should remove subreddit id from the user library and read "Join".*/}
-        <button id = "join-button">Join</button>
+        <button id = "join-button" onClick={joinIt}>Join</button>
         {/* requiest the subreddit description from the subs table */}
         <p id ='subreddit-description'>{subDescription}</p>
         {/* contains functions for filtering for: chronological order, highest upvotes, and highest upvotes in a 24h time frame. picking any of the list items will change the state of the page.*/}
@@ -146,6 +154,8 @@ export default function Subreddit({}) {
           displayModal={displayModal}
           setDisplayModal={setDisplayModal}
           comments={comments}
+          refresh={refresh}
+          setRefresh={setRefresh}
           />
     </div>
     </div>
